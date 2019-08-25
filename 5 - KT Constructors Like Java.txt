@@ -1,0 +1,45 @@
+class Main
+{
+    private var name : String? = null
+    private var age : Int = 0
+    private var marks : Double = 0.0
+
+    constructor(name : String)
+    {
+        this.name = name
+    }
+
+    constructor(name : String,age : Int)
+    {
+        this.name = name
+        this.age = age
+    }
+
+    constructor(name : String = "Akshay Pawar" ,age : Int = 20, marks :Double=82.33)
+    {
+        this.name = name
+        this.age = age
+        this.marks = marks
+    }
+
+    fun getData(){
+        println("Name : $name")
+        println("Age  : $age")
+        println("Marks: $marks")
+    }
+
+}
+fun main(args: Array<String>)
+{
+    val m1 = Main("Akshay")
+    m1.getData()
+    println("_________________________")
+    val m2 = Main("Alex",22)
+    m2.getData()
+    println("_________________________")
+    val m3 = Main("John Gaily",25,92.66)
+    m3.getData()
+    println("_________________________")
+    val m4 = Main()
+    m4.getData()
+}

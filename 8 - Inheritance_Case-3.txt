@@ -1,0 +1,22 @@
+// Source Code : Inheritance in case of parameterized primary constructor
+
+open class Main(school : String)
+{
+    var school : String = school
+
+}
+class Sub(school : String, name : String, age : Int) : Main(school)
+{
+    var name : String = name
+    val age : Int = age
+    fun show()
+    {
+        println("school : $school\nName : $name \nAge : $age")
+    }
+
+}
+fun main(args: Array<String>)
+{
+    val s = Sub("Standford","Akshay",22)
+    s.show()
+}

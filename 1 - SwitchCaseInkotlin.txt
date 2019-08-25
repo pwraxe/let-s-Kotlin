@@ -1,0 +1,33 @@
+fun main(args: Array<String>) {
+    var x: Int = 4
+    when (x)
+    {
+        1 -> {
+            print("one")
+            print("One")
+            print("ONE")
+        }
+        2 ->
+        {
+            var sum = sum(5,8);
+            print(sum)
+        }
+
+        3 -> print("Three")
+        4 ->
+        {
+            print("Four")
+            var nexted : Int = 2
+            when(nexted)
+            {
+                1 -> print("Nested one")
+                2 -> print("Nested Two")
+                3 -> print("Nested Three")
+            }
+        }
+    }
+}
+
+fun sum(x:Int,y:Int) : Int{
+    return x+y
+}

@@ -1,0 +1,18 @@
+// Source Code : Inheritance in case of 'init{}' block
+
+open class Main
+{
+    init {
+        println("main class")
+    }
+}
+class Sub : Main()
+{
+    init {
+        println("sub class")
+    }
+}
+
+fun main(args: Array<String>) {
+    Sub()
+}

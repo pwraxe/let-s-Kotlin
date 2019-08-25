@@ -1,0 +1,33 @@
+open class Boss
+{
+    var sal : Int = 50000
+    open fun show()
+    {
+        println("boss class show function")
+    }
+    fun dis()
+    {
+        println("dis fun")
+    }
+}
+
+object Main : Boss()
+{
+    var name: String = "Akshay"
+
+    override fun show()
+    {
+        super.show()
+        println("child class show method , sal : $sal")
+    }
+}
+
+fun main(args: Array<String>) {
+    println("name in main : "+Main.name)
+    Main.show()
+    println(Main.sal)
+    Main.dis()
+}
+
+
+

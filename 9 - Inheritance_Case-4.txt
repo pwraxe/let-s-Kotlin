@@ -1,0 +1,23 @@
+// Source Code : Inheritance in case of method overriding
+
+open class Main
+{
+    open fun show()
+    {
+        println("parent class show function")
+    }
+}
+class Sub : Main()
+{
+    override fun show()
+    {
+        println("sub class constructor")
+    }
+}
+
+fun main(args: Array<String>) {
+    var m = Main()
+    m.show()
+    var s = Sub()
+    s.show()
+}

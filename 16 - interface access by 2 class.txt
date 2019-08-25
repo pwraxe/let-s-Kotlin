@@ -1,0 +1,41 @@
+interface Shop
+{
+    var name : String
+    var owner : String
+    fun income() : Int
+    fun invest() : Int
+    fun shopType()  : String
+}
+class Main : Shop {
+    override var name: String = "Pawar Garments"
+    override var owner: String = "Surekha Pawar"
+    override fun income(): Int = 80_000
+    override fun invest(): Int = 10_00_000
+    override fun shopType(): String = "Ready Made Cloth"
+}
+class Medical : Shop
+{
+    override var name: String = "Akshay Medical"
+    override var owner: String = "Akshay Pawar"
+    override fun income(): Int = 50_000
+    override fun invest(): Int = 5_00_000
+    override fun shopType(): String = "All Type's of Medicine"
+}
+fun main(args: Array<String>)
+{
+    val m = Main()
+    println("Shop Name : "+m.name)
+    println("Owner Name: "+m.owner)
+    println("Income : "+m.income())
+    println("Invest : "+m.invest())
+    println("Shop Type : "+m.shopType())
+
+    println("----------------------------------")
+
+    val m1 = Medical()
+    println("Shop Name : "+m1.name)
+    println("Owner Name: "+m1.owner)
+    println("Income : "+m1.income())
+    println("Invest : "+m1.invest())
+    println("Shop Type : "+m1.shopType())
+}

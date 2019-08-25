@@ -1,0 +1,28 @@
+class Main (x : Int,y : Int)
+{
+    var x : Int = x
+    var y : Int = y
+
+    fun show()
+    {
+        println("z = $x + $y i")
+    }
+    infix operator fun plus(m : Main) : String
+    {
+        val ex1 = this.x + m.x
+        val ex2 = this.y + m.y
+        return "z = $ex1 + $ex2 i"
+    }
+}
+
+fun main(args: Array<String>)
+{
+    val m1 = Main(3,5)
+    m1.show()
+
+    val m2 = Main(4,6)
+    m2.show()
+
+    println(m1 plus m2 )
+
+}

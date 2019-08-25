@@ -1,0 +1,23 @@
+//Source Code : Single Level Inheritance
+
+open class Human(name : String,age : Int,mobile : Long)
+{
+    var name : String? = name
+    val age : Int = age
+    val  mobile : Long = mobile
+}
+class Student(department : String,id : Int,name : String,age : Int,mobile : Long) : Human(name,age,mobile)
+{
+    var department : String = department
+    val id : Int = id
+
+    fun show()
+    {
+        println(" ID : $id \n Name : $name \n Age : $age \n Mobile : $mobile \n Department : $department")
+    }
+}
+fun main(args: Array<String>)
+{
+    val s = Student("IT",3437,"Akshay Pawar",22,9657513437)
+    s.show()
+}

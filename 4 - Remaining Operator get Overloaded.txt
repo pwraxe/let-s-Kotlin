@@ -1,0 +1,37 @@
+class Main {
+    private var x : Int = 50
+    private var y : Int = -30
+
+    operator fun plus(m : Main) : Int = this.x + m.y
+    operator fun minus(m : Main): Int = this.x - m.y
+    operator fun times(m : Main): Int = this.x * m.y
+    operator fun div(m : Main) : Float= (this.x / m.y).toFloat()
+    operator fun rem(m : Main) : Int = this.x % m.y
+    operator fun rangeTo(m : Main) :IntProgression = this.x downTo m.y
+
+    operator fun unaryPlus() = -y
+    operator fun unaryMinus() = -x
+    operator fun not() = x==50 // | x > y | x < y | x == y
+}
+
+fun main(args: Array<String>)
+{
+    val m1 = Main()
+    val m2 = Main()
+
+    println("Add : ${m1+m2}")
+    println("Sub : ${m1-m2}")
+    println("mult: ${m1*m2}")
+    println("div : ${m1/m2}")
+    println("rem : ${m1%m2}")
+    println("Range : ${m1..m2}")
+
+    println("______________________________End of Arithmetic")
+
+    println("Unary Plus : ${+m1}")
+    println("Unary Minus : ${-m1}")
+    println("Unary Not : ${!m1}")
+    println("______________________________End oof Unary")
+
+    /* a+=b  is similar to a = a+b */
+}

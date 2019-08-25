@@ -1,0 +1,42 @@
+open class Education(private var name : String, private var city : String, private var area : Int, private var department : String,private var principle : String, private val id : Int)
+{
+    fun getDetails()
+    {
+        println("ID : $id")
+        println("Name : $name")
+        println("City : $city")
+        println("Area : $area sq ft")
+        println("Dept.: $department")
+        println("Principle : $principle")
+    }
+
+}
+class School(private var ssc : Double, private val cource : String,name : String, city : String, area : Int, department: String,principle: String,id: Int) : Education(name,city,area,department,principle,id)
+{
+    fun getSchoolData()
+    {
+        println("--- School Detail ---")
+        getDetails()
+        println("Course : $cource")
+        println("SSC Result : $ssc")
+    }
+}
+
+class Collage(private var hsc : Double, private val course : String,name : String, city : String, area : Int, department: String,principle: String,id: Int) : Education(name,city,area,department,principle,id)
+{
+    fun getCollageData()
+    {
+        println("\n--- Collage Detail ---")
+        getDetails()
+        println("Course : $course")
+        println("SSC Result : $hsc")
+    }
+}
+
+fun main(args: Array<String>)
+{
+    val s = School(94.5,"SSC","LSB Waje Vidyalay","Nashik",3000,"Jr. |Department","Dr. A.S.Pawar",5025)
+    s.getSchoolData()
+    val c =Collage(82.7,"HSC","GMD Sinnar Collage","Nashik",5000,"Science","Dr.A.S.Pawar",4027)
+    c.getCollageData()
+}

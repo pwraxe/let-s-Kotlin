@@ -1,0 +1,28 @@
+/*
+	Extension Function and Infix keyword
+	a.add(b) after using infix in front of function -> a add b
+	a and b must object
+*/
+
+
+class Main
+{
+    var fname : String ? = null
+    fun show()
+    {
+        println("$fname")
+    }
+}
+infix fun Main.add(m3 : Main) : String = "Hi We are "+this.fname+" and " +m3.fname
+
+fun main(args: Array<String>)
+{
+    val m1 = Main()
+    m1.fname = "Akshay"
+    m1.show()
+    val m2 = Main()
+    m2.fname = "Pallavi"
+    m2.show()
+    println(m1 add m2)
+
+}

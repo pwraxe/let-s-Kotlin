@@ -1,0 +1,34 @@
+abstract class Main {
+    abstract var name : String
+    abstract fun show()
+    fun display()
+    {
+        println("display method define in abstract class")
+    }
+    open fun view(){
+        println("view method in abstract class")
+    }
+    open fun get(){}
+
+    
+}
+class Sub : Main() {
+
+    override var name: String  = ""
+    override fun show() {
+        display()
+        println("override show function : $name")
+    }
+    override fun get()
+    {
+       view()
+       println("get method overrides in sub class")
+    }
+
+}
+fun main(args: Array<String>) {
+    val s = Sub()
+    s.name = "Akshay"
+    s.show()
+    s.get()
+}

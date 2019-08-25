@@ -1,0 +1,52 @@
+fun main(args: Array<String>) {
+    // val variableName : DataType = InitialValue
+    val b1 : Byte = -128                //
+    println("Byte -  : $b1")            //  Size => 1 Byte = 8 Bit
+    val b2 : Byte = 127                 //
+    println("Byte +  : $b2 \n")         //
+
+    val s1 : Short = -32768             //
+    println("Short - : $s1")            //  Size => 2 Byte = 16 Bit
+    val s2 : Short = 32767              //
+    println("Short + : $s2  \n")        //
+
+    val i1 : Int = -2147483648          //
+    println("Integer - : $i1")          //  Size => 4 Byte = 32 Bit
+    val i2 : Int = 2147483647           //
+    println("Integer + : $i2 \n")       //
+
+    val l1 : Long = -9_223_372_036_854_775_807      //
+    println("Long -  : $l1")                        // Size => 8 Byte = 64 Bit
+    val l2 : Long =  9_223_372_036_854_775_807      //
+    println("Long +  : $l2 \n")                     //
+
+    val f1 : Float = 3.4E38f              //
+    println("Float + e + : $f1")          //
+    val f2 : Float  =-3.4E38f             //
+    println("Float - e + : $f2 \n")       //    Size => 4 Byte = 32 Bit
+    val f3 : Float = 3.4E-38f             //
+    println("Float - e - : $f3")          //
+    val f4 : Float = -3.4e-38f            //
+    println("Float - e - : $f4 \n")       //
+
+    val d1 : Double = 1.7e308             //
+    println("Double + e + : $d1")         //
+    val d2 : Double = -1.7e308            //
+    println("Double - e + : $d2 \n")      //    Size => 8 Byte = 64 Bit
+    val d3 : Double = 1.7e-308            //
+    println("Double + e - : $d3")         //
+    val d4 : Double = -1.7e-308           //
+    println("Double - e - : $d4 \n")      //
+
+    val c1 : Char = 'A'                   //
+    println("Char  :  $c1")               //
+    val c2 : Char = 65.toChar()           //    Size => 2 Byte = 16 Bit
+    println("Char Num : $c2")             //
+    val c3 : Char = '\u0041'              //
+    println("Char Unicode : $c3 \n")      //
+
+    val bool1 : Boolean = true            //
+    println("BooleanT : $bool1")          //    Size => 1Bit = 0  OR  1
+    val bool2 : Boolean = false           //
+    println("BooleanF : $bool2 \n")       //
+}
