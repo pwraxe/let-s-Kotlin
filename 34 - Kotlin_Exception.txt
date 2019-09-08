@@ -1,0 +1,209 @@
+// try{...}catch{...}
+
+fun main(args: Array<String>)
+{
+    try{
+        val x = 10/0
+        println("this statement not executes $x")
+    }catch (e : ArithmeticException)
+    {
+        println("could not divide by zero")
+    }
+}
+----------------------> output : could not divide by zero
+_____________________________________________________________________________________________________________
+fun main(args: Array<String>)
+{
+    try {
+        val x = 10 / 0
+        println("this statement not executes $x")
+    }finally
+    {
+        println("This is finally block")
+    }
+}
+
+----------------------> output : 
+This is finally block
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at MainKt.main(Main.kt:4)
+_____________________________________________________________________________________________________________
+// try{...}catch{...}finally{...}
+
+fun main(args: Array<String>)
+{
+    try {
+        val x = 10 / 0
+        println("this statement not executes $x")
+    }
+    catch (e : ArithmeticException)
+    {
+        println("Could not divide by zero")
+        println(e)
+    }
+    finally
+    {
+        println("This is finally block")
+    }
+}
+--------------------> output : 
+Could not divide by zero
+java.lang.ArithmeticException: / by zero
+This is finally block	
+_____________________________________________________________________________________________________________
+// try{...}catch{...} as a Expression			Method 1   (direct assignment)
+
+import java.lang.NumberFormatException
+
+fun main(args: Array<String>) 
+{
+    val num = requestNums("123")		// output : 123
+//	val num = requestNums("1a23")		// output : 0    Exception here
+	
+	println(num)
+}
+fun requestNums(s : String) : Int = try {  Integer.parseInt(s) } catch (e : NumberFormatException)  { 0 }
+_____________________________________________________________________________________________________________
+// try{...}catch{...} as a Expression 					Method 2  (by return statement)
+
+import java.lang.NumberFormatException
+
+fun main(args: Array<String>)
+{
+    val num = requestNums("123")		// output : 123
+//	val num = requestNums("1a23")		    // output : 0    Exception here
+
+    println(num)
+}
+fun requestNums(s : String) : Int
+{
+    return try
+    {
+        Integer.parseInt(s)
+    }
+    catch (e : NumberFormatException)  { 0 }
+}
+_____________________________________________________________________________________________________________
+//try{...}catch{...}catch{...} ... catch{...}finally{...} 			Multiple catch block
+
+fun main(args: Array<String>) {
+    val arr = arrayOf(1,2,3,6,5,4)
+    try {
+        arr[6] = 10/0
+        //arr.set(6,10/0)
+    }
+    catch (aiob : ArrayIndexOutOfBoundsException)
+    {
+        println("array size is ${arr.size}")
+    }
+    catch (ae : ArithmeticException)
+    {
+        println("/ by zero")
+    }
+    catch (e : Exception)
+    {
+        println("Parent Class Exception")
+    }
+    finally {
+        println("This is finally block")
+    }
+}
+---------------------> output : 
+/ by zero
+This is finally block
+
+_____________________________________________________________________________________________________________
+// nested try{...}catch{...}
+
+try
+{
+	executable statement...
+	try
+	{
+		executable statement...
+		try
+		{
+			executable statement...
+		}
+		catch(...)
+		{
+			exceptional statement...
+		}	
+	}
+	catch(...)
+	{
+		exceptional statement...
+	}
+}
+catch(...)
+{
+	exceptional statement...
+}
+_____________________________________________________________________________________________________________
+finally block
+
+try
+{
+	executable statement...
+}
+catch(...)
+{
+	exceptional statement...
+}
+finally
+{
+	final statement...
+}
+-------------------------------------
+try
+{
+	executable statement...
+}
+finally
+{
+	final statement...
+}
+_____________________________________________________________________________________________________________
+// Throw Keyword
+
+fun main(args: Array<String>) 
+{
+    try {
+        val age : Int = 15
+        if (age < 18)
+            throw ArithmeticException("Age is under 18")
+        else
+            println("successfully can vote")
+    }
+    catch (e : ArithmeticException){
+        println(e)
+    }
+}
+
+-------------------> output : 
+java.lang.ArithmeticException: Age is under 18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

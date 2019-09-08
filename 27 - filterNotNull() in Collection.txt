@@ -1,0 +1,22 @@
+/*
+	filterNotNull() : This method filter/extract only those element 
+					  which is actully NOT NULL 
+					  Here name1, name3 are filter/extract because those element are NOT NULL in nature
+					  name2 not filter/extract because it declare as NULL  
+*/
+
+fun main(args: Array<String>)
+{
+    var name1 : String = ""						// name1 eligible for filter/extract because it is not NULL
+    var name2 : String? = null					// name2 is not filter/extract because it declare as NULL
+    var name3 : String = "Akshay"				// name3 eligible for filter/extract because it is initialize by Akshay String 
+    val list = listOf(1,3.4,name1,name2,name3)	// name1, name2, name3 pass as parameter 
+    val ex = list.filterNotNull()				// filterNotNull() method extract NOT NULL elements and store in ex variable as (1,3.4,,Akshay)
+    for (x in ex )
+        println(x)	
+}
+---------------------OUTPUT-----------------------------
+1
+3.4
+			// name1
+Akshay		// name3

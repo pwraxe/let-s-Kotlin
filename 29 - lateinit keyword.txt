@@ -1,0 +1,66 @@
+/* 
+* lateinit keyword use for declaring a variable
+* This keyword not work with nullable variable 
+* This keyword not work with Premitive Data Type (Ex. Byte, Short, Int, Long, Char, Float, Double, Boolean) 
+* This keyword not work with val keyword 
+
+* This keyword work with nonPremitive Data Type (Ex. any ClassName --> like String,System...)
+*/
+
+fun main(args: Array<String>)
+{
+    lateinit var name : String      // Declare 
+    name = "Akshay"                 // Initialise
+    println("Hi I am $name")        // Use
+}
+Output : Hi I am Akshay
+_______________________________________________________________________________________________
+
+Error Programm
+ 
+fun main(args: Array<String>)
+{
+    lateinit var b : Byte         // goto error
+    lateinit var s : Short        // goto error
+    lateinit var i : Int          // goto error
+    lateinit var l : Long         // goto error
+    lateinit var f : Float        // goto error
+    lateinit var d : Double       // goto error
+    lateinit var bool : Boolean   // goto error
+    lateinit var c : Char
+}
+// error : 'lateinit' modifier is not allowed on local variable of premitive types
+_______________________________________________________________________________________________
+
+In Case of Class
+
+class Main
+{
+    lateinit var name: String
+    fun show()
+    {
+        name = "Akshay"
+        println("$name is in show() ")
+    }
+    fun display()
+    {
+        name = "Alex"
+        println("$name is in display()")
+    }
+}
+
+fun main(args: Array<String>)
+{
+    val m = Main()
+    m.name = "Start"
+    println("${m.name} is in main()")
+    m.show()
+    m.display()
+}
+------------------OUTPUT-------------------
+Start is in main()
+Akshay is in show() 
+Alex is in display()
+
+
+

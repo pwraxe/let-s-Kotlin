@@ -1,0 +1,34 @@
+// Method 1 : readLine()
+fun main(args: Array<String>)
+{
+    print("Enter Name : ")
+    val name = readLine()		//var OR val Both works
+    println("Name : $name")
+}
+_______________________________________________________________________________
+
+//Method 1 : readLine() with explicit typecast
+
+fun main(args: Array<String>)
+{
+    print("Enter Name : ")
+    val name:String? = readLine().toString()
+    println("Name : $name")
+    println("--------------------------------\n")
+
+    print("Enter age : ")
+    val age = readLine()?.toInt()
+    println("Age is : $age")
+    println("--------------------------------\n")
+
+    print("Enter Marks : ")
+    val marks:Double? = readLine()?.toDouble()
+    println("Marks is : $marks")
+    println("--------------------------------\n")
+
+    print("Enter Mobile No : ")
+    val mob:Long? = readLine()?.toLong()
+    println("Mobile No is : $mob")
+}
+_______________________________________________________________________________
+

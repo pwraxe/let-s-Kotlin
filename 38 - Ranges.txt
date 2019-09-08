@@ -1,0 +1,95 @@
+
+fun main(args: Array<String>)
+{
+    val ir : IntRange = 1..10	//  'a'..'z'  || 'A'..'Z'
+    for (r in ir )				// OR for (r in 1..10) 
+        print("$r, ")
+}
+---------------> output : 
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+___________________________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    val ir : : IntProgression = 1 until 10
+    for (r in ir )
+        print("$r, ")
+}
+---------------> output : 
+1, 2, 3, 4, 5, 6, 7, 8, 9, 
+___________________________________________________________________________________________________
+
+
+fun main(args: Array<String>)
+{
+    val ir : IntProgression  = 10 downTo  1
+    for (r in ir )
+        print("$r, ")
+}
+----------------> output :
+10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 
+____________________________________OR________________________________________________
+
+fun main(args: Array<String>)
+{
+    val r = 1..10
+    for (rng in r .reversed())
+        print("$rng, ")
+}
+----------------> output : 
+10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 
+___________________________________________________________________________________________________	
+
+fun main(args: Array<String>)
+{
+    val ir : IntProgression  = 1..20
+    for (r in ir step 2 )
+        print("$r, ")
+}
+-----------------> output :
+1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 
+___________________________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    val ir : IntProgression  = 2..20
+    for (r in ir step 2 )
+        print("$r, ")
+}
+------------------> output : 
+2, 4, 6, 8, 10, 12, 14, 16, 18, 20,
+___________________________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    val a2z:CharRange = ('a'..'z')
+    val read = a2z.iterator()
+    while (read.hasNext())
+        print(" ${read.next()}")
+}
+-----------------------> output :
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+___________________________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    val rng = 1.rangeTo(20)
+    for (r in rng)  // for (r in rng step 2)
+        print(" $r")
+}
+-----------------------> output :
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+___________________________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    val rng = IntRange(1,10)
+    for (r in rng)  // for (r in rng step 2)
+        print(" $r")
+}
+-----------------> output :
+1 2 3 4 5 6 7 8 9 10
+
+
+ 

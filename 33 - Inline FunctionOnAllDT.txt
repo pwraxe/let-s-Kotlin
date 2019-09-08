@@ -1,0 +1,127 @@
+// inline function in case of Class
+
+class Main (var name : String, var age: Int)
+{
+    inline fun showData()
+    {
+        println("Name : $name")
+        println("Age : $age")
+    }
+}
+fun main(args: Array<String>)
+{
+    val m = Main("Akshay",21)
+    m.showData()
+}
+----------------OUTPUT---------------
+
+Name : Akshay
+Age : 21
+______________________________________________________________________________________________________________________
+
+// Inline function in All Data Type in case of function
+
+fun main(args: Array<String>)
+{
+    showString{"Pawar Garments"}
+    showByte { 123 }
+    showShort { 32760 }
+    showInt {2147483612}
+    showLong{ 9_223_372_036_854_775_800 }
+    showFloat{ 3.1428571f }
+    showDouble{ 3.142857142857143 }
+    showCharacter{ 'A'}
+    showBoolean{ true }
+}
+inline fun showString(name :() -> String?)
+{
+    println("String : ${name()}")
+}
+inline fun showByte(byteValue : ()-> Byte) = println("Byte : ${byteValue()}")
+inline fun showShort(shortValue: () -> Short)= println("short : ${shortValue()}")
+inline fun showInt(intValue: () -> Int) = println("Int : ${intValue()}")
+inline fun showLong(longValue : () -> Long) = println("Long : ${longValue()}")
+inline fun showFloat(floatValue : () -> Float) = println("Float : ${floatValue()}")
+inline fun showDouble (doubleValue : () -> Double ) = println("Double : ${doubleValue()}")
+inline fun showCharacter(charValue : () -> Char ) = println("Char : ${charValue()}")
+inline fun showBoolean(boolValue : () -> Boolean) = println("Boolean : ${boolValue()}")
+
+-------------OUTPUT---------------
+
+String : Pawar Garments
+Byte : 123
+short : 32760
+Int : 2147483612
+Long : 9223372036854775800
+Float : 3.142857
+Double : 3.142857142857143
+Char : A
+Boolean : true
+	
+
+______________________________________________________________________________________________________________________
+// inline function with 2 parameter
+
+fun main(args: Array<String>)
+{
+    show(1000) {"Pawar"}
+}
+inline fun show(have : Int, name : () -> String){ println("$have : ${name()}")}
+
+---------------OUTPUT---------------
+1000 : Akshay
+
+______________________________________________________________________________________________________________________
+
+// Inline function with Generik Data Type
+
+fun main(args: Array<String>)
+{
+
+    show("Hi Mr. "){ requestName()}
+}
+fun requestName()
+{
+    print("Akshay")
+}
+inline fun<T> show(pre : T, name : T.() -> Unit)
+{
+    print(pre)
+    pre.name()
+}
+
+-------------OUTPUT---------------
+Hi Mr. Akshay
+______________________________________________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    show(1000){ "Akshay"}
+}
+inline fun<A> show( a : A, name : A.() -> String )
+{
+    println(" value : $a")
+    println(a.name())
+}
+-------------OUTPUT---------------
+value : 1000
+Akshay
+
+______________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

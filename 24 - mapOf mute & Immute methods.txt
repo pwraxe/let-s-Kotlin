@@ -1,0 +1,87 @@
+Source Code : mapOf<DT , DT> and its methods
+--------------------------------------------
+fun main(args: Array<String>)
+{
+    var m = mapOf<Int,String>(1 to "Akshay",2 to "Alex", 8 to "danny")  // READ ONLY, cannot add or delete element's
+    println(m[1])       // Akshay
+    println(m[3])       // null , because key 3 is not present,  only key 1 , 2 , 8 present
+    println(m.get(8))   // danny
+    println(m.entries)  // [1=Akshay, 2=Alex, 8=danny]
+    println(m.keys)     // [1, 2, 8]
+    println(m.size)     // 3
+    println(m.values)   // [Akshay, Alex, danny]
+    println(m.containsKey(8))     // true
+    println(m.containsValue("Akshay"))   //true
+}
+____________________________________________________________________________________________________________________________
+
+Source Code :  mutableMapOf<DT , DT> and its methods
+
+fun main(args: Array<String>)
+{
+    //var m = mapOf<Int,String>(1 to "Akshay",2 to "Alex", 8 to "danny")
+    var m = mutableMapOf<Int,String>(1 to "Akshay",2 to "Alex", 3 to "danny",4 to "mac",5 to "linux")
+    println(m[1])       // Akshay
+    println(m[3])       // null , because key 3 is not present,  only key 1 , 2 , 8 present
+    println(m.get(8))   // danny
+    println(m.entries)  // [1=Akshay, 2=Alex, 8=danny]
+    println(m.keys)     // [1, 2, 8]
+    println(m.size)     // 3
+    println(m.values)   // [Akshay, Alex, danny]
+    println(m.containsKey(8))     // true
+    println(m.containsValue("Akshay"))   //true
+    println("-----------------methods in mutableMapOf()--------------")
+    println("m.put(3,\"mac\") : "+m.put(3,"mac"))               // danny   o/p Bcoz danny name already present at 3rd place
+    println("m.put(6,\"windows\") : "+m.put(6,"windows"))       // null    o/p Bcoz no name present at 6th place
+    println("m.replace(2,\"John\") : "+m.replace(2,"John"))     // Alex    o/p Bcoz Alex name already present at 2nd place
+    println("m.remove(6)"+m.remove(6))                      // windows  o/p Bcoz windows name already present at 6th place
+    println("m.minusAssign(2)"+m.minusAssign(2))            //kotlin.Unit
+    println("m.set(3,\"android\") : "+m.set(3,"android"))       //kotlin.Unit
+    println("m.entries : "+ m.entries)                          //[1=Akshay, 3=android, 4=mac, 5=linux]
+    println("m.clear() : "+m.clear())                           // removes all entry
+    println("m.entries : "+ m.entries)                          // []
+
+
+	
+____________________________________________________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    //var m = mapOf<Int,String>(1 to "Akshay",2 to "Alex", 8 to "danny")
+    //var m = mutableMapOf<Int,String>(1 to "Akshay",2 to "Alex", 3 to "danny",4 to "mac",5 to "linux")
+    var m = HashMap<Int,String>(5)
+    m.put(1,"Akshay")
+    m.put(2,"Alex")
+    m[3]="windows"       //put assignment
+    m.put(4,"linux")
+    m.put(5,"mac")
+    m.put(6,"system")
+
+    println("m[1] : "+m[1])                         // Akshay
+    println("m[3] : "+m[3])                         // windows
+    println("m.get(4) : "+m.get(4))                 // linux
+    println("m.entries : "+m.entries)               // [1=Akshay, 2=Alex, 3=windows, 4=linux, 5=mac, 6=system]
+    println("m.keys : "+m.keys)                     // [1, 2, 3, 4, 5, 6]
+    println("m.size : " + m.size)                   // 6
+    println("m.values : "+m.values)                 // [Akshay, Alex, windows, linux, mac, system]
+    println("m.getValue(0) : "+m.getValue(2))   // Alex
+    println("m.containsKey(8) : "+m.containsKey(8)) // false
+    println("m.containsValue(\"Akshay\") : "+m.containsValue("Akshay"))     //true
+    println("-----------------methods in HashMap() & hashMapOf()--------------")
+    println("m.put(3,\"mac\") : "+m.put(3,"mac"))                           //windows
+    println("m.put(6,\"windows\") : "+m.put(6,"windows"))                   // system
+    println("m.replace(2,\"John\") : "+m.replace(2,"John"))                 //Alex
+    println("m.remove(6)"+m.remove(6))                                  // windows
+    println("m.minusAssign(2)"+m.minusAssign(2))                        // kotlin.Unit
+    println("m.set(3,\"android\") : "+m.set(3,"android"))                   // kotlin.Unit
+    println("m.entries : "+ m.entries)                                      //[1=Akshay, 3=android, 4=linux, 5=mac]
+    println("m.clear() : "+m.clear())                                       // removes all entry's
+    println("m.entries : "+ m.entries)                                      // []
+
+}
+____________________________________________________________________________________________________________________________
+
+
+
+
+	

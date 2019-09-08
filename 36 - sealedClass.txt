@@ -1,0 +1,181 @@
+// Sealed Class seale those classes which is declare inside the sealed Class 
+// Here Main is sealed class which seale the class Circle, Rect, Square
+// We can access declared class inside the sealed class by classnames
+------------------------------------------------------------------------
+// // sealed Class in case of declared class
+sealed class Main
+{
+    class Circle(var radius : Double)
+    class Rect (var leangth : Int, var bredth  :Int)
+    class Square(var leangth: Int)
+}
+
+fun main(args: Array<String>)
+{
+    val sc = Main.Circle(5.0)
+    println("Circle Radius : ${sc.radius}")			// Circle Radius : 5.0
+
+    val sR = Main.Rect(5,4)
+    println("Area of Rectangle : ${sR.leangth * sR.bredth}")		// Area of Rectangle : 20
+
+    val ss = Main.Square(5)															
+    println("Area of Square : ${ss.leangth * ss.leangth}")			// Area of Square : 
+}
+
+_________________________________________________________________________________________________
+
+// sealed Class in case of define class
+
+sealed class Main
+{
+    class Circle(var radius : Double)
+    {
+        fun getRadius(){ println("Radius : $radius")}
+    }
+    class Rect (var leangth : Int, var bredth  :Int)
+    {
+        fun getRectArea()
+        {
+            println("Rectangle Area : ${leangth*bredth}")
+        }
+    }
+    class Square(var leangth: Int)
+    {
+        fun getSquareArea()
+        {
+            println("Square Area : ${leangth * leangth}")
+        }
+    }
+}
+
+fun main(args: Array<String>)
+{
+    val sc = Main.Circle(5.0)
+    sc.getRadius()
+
+    val sR = Main.Rect(5,4)
+    sR.getRectArea()
+
+    val ss = Main.Square(5)
+    ss.getSquareArea()
+}
+-------------------------> output : 
+Radius : 5.0
+Rectangle Area : 20
+Square Area : 25
+
+_________________________________________________________________________________________________
+
+// sealed Class in case of inheritance
+
+sealed class Main
+{
+    val pi : Double = 3.145
+    fun show()
+    {
+        println("Main Class show() method")
+    }
+
+    class Circle(var radius : Double) : Main()
+    {
+        fun getRadius()
+        {
+            println("Circle Area : ${pi * radius * radius}")
+            show()
+        }
+    }
+    class Rect (var leangth : Int, var bredth  :Int) : Main()
+    {
+        fun getRectArea()
+        {
+            println("Rectangle Area : ${leangth*bredth}")
+            show()
+        }
+    }
+    class Square(var leangth: Int) : Main()
+    {
+        fun getSquareArea()
+        {
+            println("Square Area : ${leangth * leangth}")
+            show()
+        }
+    }
+}
+
+fun main(args: Array<String>)
+{
+    val sc = Main.Circle(5.0)
+    sc.getRadius()
+
+    val sR = Main.Rect(5,4)
+    sR.getRectArea()
+
+    val ss = Main.Square(5)
+    ss.getSquareArea()
+}
+---------------------> output :
+Circle Area : 78.625
+Main Class show() method
+Rectangle Area : 20
+Main Class show() method
+Square Area : 25
+Main Class show() method
+
+_________________________________________________________________________________________________
+// passing value to parent class 
+
+// sealed Class in case of inheritance
+sealed class Main(var shapeName : String)
+{
+    val pi : Double = 3.145
+    fun show()
+    {
+        println("Main Class show() method for : $shapeName")
+    }
+
+    class Circle(var radius : Double, name : String) : Main(name)
+    {
+        fun getRadius()
+        {
+            println("Circle Area : ${pi * radius * radius}")
+            show()
+        }
+    }
+    class Rect (var leangth : Int, var bredth  :Int,name : String) : Main(name)
+    {
+        fun getRectArea()
+        {
+            println("Rectangle Area : ${leangth*bredth}")
+            show()
+        }
+    }
+    class Square(var leangth: Int,name : String) : Main(name)
+    {
+        fun getSquareArea()
+        {
+            println("Square Area : ${leangth * leangth}")
+            show()
+        }
+    }
+}
+
+fun main(args: Array<String>)
+{
+    val sc = Main.Circle(5.0,"Circle")
+    sc.getRadius()
+
+    val sR = Main.Rect(5,4,"Rectangle")
+    sR.getRectArea()
+
+    val ss = Main.Square(5,"Square")
+    ss.getSquareArea()
+}
+--------------------> output : 
+Circle Area : 78.625
+Main Class show() method for : Circle
+Rectangle Area : 20
+Main Class show() method for : Rectangle
+Square Area : 25
+Main Class show() method for : Square
+
+

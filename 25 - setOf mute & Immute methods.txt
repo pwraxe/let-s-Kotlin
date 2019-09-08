@@ -1,0 +1,232 @@
+
+ /* The Class
+    setOf<DT>(elements)  ==  listOf<DT>(elements)
+    difference :
+        1. setOf NOT display duplicates element
+        2. listOf display duplicates element
+*/
+
+fun main(args: Array<String>)
+{
+    val s = setOf<Int>(1,2,5,4,7,8,9,9,6,5,1)
+    for (s1 in s)
+        print("  $s1")
+    println("s.size : "+s.size)
+    println("s.minus(7) : "+s.minus(7))
+    println("s.plus(1) : "+s.plus(1))
+    println("s.plusElement(3) : "+s.plusElement(3))
+    println("s.stream() : "+s.stream())
+    println("s.contains(9) : "+s.contains(9))
+    println("s.isEmpty() : "+s.isEmpty())
+    println("s.min() : "+s.min())
+    println("s.average() : "+s.average())
+    println("s.chunked(3) : "+s.chunked(3))
+    println("s.count() : "+s.count())
+    println("s.distinct() : " +s.distinct())
+    println("s.drop(2) : "+s.drop(2))
+    println("s.first() : "+s.first())
+    println("s.last() : "+s.last())
+    println("s.max() : "+s.max())
+    println("s.reversed() : "+s.reversed())
+    
+    println("s.sorted() : "+s.sorted())
+    println("s.sortedBy { -1 } : "+s.sortedBy { -1 })
+    println("s.sum() : "+s.sum())
+    println("s.toIntArray() : "+s.toIntArray())
+    println("s.toList() : "+s.toList())
+}
+
+---------------------------------------OUTPUT--------------------------------------------
+  1  2  5  4  7  8  9  6s.size : 8
+s.minus(7) : [1, 2, 5, 4, 8, 9, 6]
+s.plus(1) : [1, 2, 5, 4, 7, 8, 9, 6]
+s.plusElement(3) : [1, 2, 5, 4, 7, 8, 9, 6, 3]
+s.stream() : java.util.stream.ReferencePipeline$Head@17c264
+s.contains(9) : true
+s.isEmpty() : false
+s.min() : 1
+s.average() : 5.25
+s.chunked(3) : [[1, 2, 5], [4, 7, 8], [9, 6]]
+s.count() : 8
+s.distinct() : [1, 2, 5, 4, 7, 8, 9, 6]
+s.drop(2) : [5, 4, 7, 8, 9, 6]
+s.first() : 1
+s.last() : 6
+s.max() : 9
+s.reversed() : [6, 9, 8, 7, 4, 5, 2, 1]
+s.sorted() : [1, 2, 4, 5, 6, 7, 8, 9]
+s.sortedBy { -1 } : [1, 2, 5, 4, 7, 8, 9, 6]
+s.sum() : 42
+s.toIntArray() : [I@50df2e
+s.toList() : [1, 2, 5, 4, 7, 8, 9, 6]
+
+_________________________________________________________________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    //val s = setOf<Int>(1,2,5,4,7,8,9,9,6,5,1)
+    var s = mutableSetOf<Int>(1,2,3,6,5,4,7,8,9)
+    s.add(10)
+    s.add(12)
+    s.add(13)
+    
+    for (s1 in s)
+        print("  $s1")
+    println("s.size : "+s.size)
+    println("s.minus(7) : "+s.minus(7))
+    println("s.plus(1) : "+s.plus(1))
+    println("s.plusElement(3) : "+s.plusElement(3))
+    println("s.stream() : "+s.stream())
+    println("s.contains(9) : "+s.contains(9))
+    println("s.isEmpty() : "+s.isEmpty())
+    println("s.min() : "+s.min())
+    println("s.average() : "+s.average())
+    println("s.chunked(3) : "+s.chunked(3))
+    println("s.count() : "+s.count())
+    println("s.distinct() : " +s.distinct())
+    println("s.drop(2) : "+s.drop(2))
+    println("s.first() : "+s.first())
+    println("s.last() : "+s.last())
+    println("s.max() : "+s.max())
+    println("s.reversed() : "+s.reversed())
+
+    println("s.sorted() : "+s.sorted())
+    println("s.sortedBy { -1 } : "+s.sortedBy { -1 })
+    println("s.sum() : "+s.sum())
+    println("s.toIntArray() : "+s.toIntArray())
+    println("s.toList() : "+s.toList())
+
+    println("________________________methods in mutableSetOf()______________________")
+    println("s.add(55) : "+s.add(55))
+    println("s.remove(10) : "+s.remove(10))
+    println("s.removeIf { s.size > 10 } : "+s.removeIf { s.size > 10 })
+    for (s2 in s)
+        print("  $s2")
+}|
+
+
+----------------------------------------------OUTPUT--------------------------------------------
+
+  1  2  3  6  5  4  7  8  9  10  12  13s.size : 12
+s.minus(7) : [1, 2, 3, 6, 5, 4, 8, 9, 10, 12, 13]
+s.plus(1) : [1, 2, 3, 6, 5, 4, 7, 8, 9, 10, 12, 13]
+s.plusElement(3) : [1, 2, 3, 6, 5, 4, 7, 8, 9, 10, 12, 13]
+s.stream() : java.util.stream.ReferencePipeline$Head@81197d
+s.contains(9) : true
+s.isEmpty() : false
+s.min() : 1
+s.average() : 6.666666666666667
+s.chunked(3) : [[1, 2, 3], [6, 5, 4], [7, 8, 9], [10, 12, 13]]
+s.count() : 12
+s.distinct() : [1, 2, 3, 6, 5, 4, 7, 8, 9, 10, 12, 13]
+s.drop(2) : [3, 6, 5, 4, 7, 8, 9, 10, 12, 13]
+s.first() : 1
+s.last() : 13
+s.max() : 13
+s.reversed() : [13, 12, 10, 9, 8, 7, 4, 5, 6, 3, 2, 1]
+s.sorted() : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]
+s.sortedBy { -1 } : [1, 2, 3, 6, 5, 4, 7, 8, 9, 10, 12, 13]
+s.sum() : 80
+s.toIntArray() : [I@91c18f
+s.toList() : [1, 2, 3, 6, 5, 4, 7, 8, 9, 10, 12, 13]
+________________________methods in mutableSetOf()______________________
+s.add(55) : true
+s.remove(10) : true
+s.removeIf { s.size > 10 } : true
+  3  6  5  4  7  8  9  12  13  55
+  
+_________________________________________________________________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    //val s = setOf<Int>(1,2,5,4,7,8,9,9,6,5,1)
+    //var s = mutableSetOf<Int>(1,2,3,6,5,4,7,8,9)
+    //var s = HashSet<Int>(10,0.5f)  // HashSet<Int>(initialCapacity, loadFactorInFloat)
+     var s = hashSetOf<Int>(1,2,3,6,5,6,9,8,7,4,5,6,3,2,1)
+
+    s.add(10)
+    s.add(12)
+    s.add(13)
+    
+    for (s1 in s)
+        print("  $s1")
+    println("s.size : "+s.size)
+    println("s.minus(7) : "+s.minus(7))
+    println("s.plus(1) : "+s.plus(1))
+    println("s.plusElement(3) : "+s.plusElement(3))
+    println("s.stream() : "+s.stream())
+    println("s.contains(9) : "+s.contains(9))
+    println("s.isEmpty() : "+s.isEmpty())
+    println("s.min() : "+s.min())
+    println("s.average() : "+s.average())
+    println("s.chunked(3) : "+s.chunked(3))
+    println("s.count() : "+s.count())
+    println("s.distinct() : " +s.distinct())
+    println("s.drop(2) : "+s.drop(2))
+    println("s.first() : "+s.first())
+    println("s.last() : "+s.last())
+    println("s.max() : "+s.max())
+    println("s.reversed() : "+s.reversed())
+
+    println("s.sorted() : "+s.sorted())
+    println("s.sortedBy { -1 } : "+s.sortedBy { -1 })
+    println("s.sum() : "+s.sum())
+    println("s.toIntArray() : "+s.toIntArray())
+    println("s.toList() : "+s.toList())
+    println("s.add(55) : "+s.add(55))
+    println("s.remove(10) : "+s.remove(10))
+    println("s.removeIf { s.size > 10 } : "+s.removeIf { s.size > 10 })
+
+    println("________________________methods in hashSetOf()______________________")
+    println("s.spliterator() : "+s.spliterator())
+
+    println("s.add(15) : "+s.add(15))
+    println("s.contains(10) : "+s.contains(10))
+    println("s.remove(15) : "+s.remove(15))
+    println("s.any() : "+s.any())
+    println("s.toSet() : "+s.toSet())
+    println("s.toSet() : "+s.toSet())
+    
+    println("s.clear() : "+s.clear())
+    for (s2 in s)
+        print("  $s2")
+}  
+
+---------------------------------------------OUTPUT-------------------------------------------- 
+
+  1  2  3  4  5  6  7  8  9  10  12  13s.size : 12
+s.minus(7) : [1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 13]
+s.plus(1) : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]
+s.plusElement(3) : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]
+s.stream() : java.util.stream.ReferencePipeline$Head@81197d
+s.contains(9) : true
+s.isEmpty() : false
+s.min() : 1
+s.average() : 6.666666666666667
+s.chunked(3) : [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 12, 13]]
+s.count() : 12
+s.distinct() : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]
+s.drop(2) : [3, 4, 5, 6, 7, 8, 9, 10, 12, 13]
+s.first() : 1
+s.last() : 13
+s.max() : 13
+s.reversed() : [13, 12, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+s.sorted() : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]
+s.sortedBy { -1 } : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]
+s.sum() : 80
+s.toIntArray() : [I@91c18f
+s.toList() : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]
+s.add(55) : true
+s.remove(10) : true
+s.removeIf { s.size > 10 } : true
+________________________methods in hashSetOf()______________________
+s.spliterator() : java.util.HashMap$KeySpliterator@a245ab
+s.add(15) : true
+s.contains(10) : false
+s.remove(15) : true
+s.any() : true
+s.toSet() : [3, 4, 5, 6, 7, 8, 9, 12, 13, 55]
+s.toSet() : [3, 4, 5, 6, 7, 8, 9, 12, 13, 55]
+s.clear() : kotlin.Unit
+
+  

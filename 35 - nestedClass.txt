@@ -1,0 +1,41 @@
+// Nested class
+Class Outer
+{
+	...
+	Class Inner
+	{
+		...
+	}
+}
+fun main(...)
+{
+	val inner = Outer.Inner()
+	...
+}
+
+----------------------------------------------------
+
+class Main
+{
+    val x : Int = 100
+    class Sub
+    {
+        val m = Main()
+        val y = m.x + 100
+        fun show()
+        {
+            println("show method inside nested/inner Sub of outer Main Class")
+        }
+    }
+}
+fun main(args: Array<String>)
+{
+    val sub = Main.Sub()
+    println("Y = ${sub.y}")
+    sub.show()
+
+}
+
+-------------------> output : 
+Y = 200
+show method inside nested/inner Sub of outer Main Class

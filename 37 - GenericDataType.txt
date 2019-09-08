@@ -1,0 +1,138 @@
+// generic Function accepts single parameter
+
+fun main(args: Array<String>)
+{
+    showData("Akshay")
+    showData(125.toByte())
+    showData(32761.toShort())
+    showData(2147483645)
+    showData(987654321123456789L)
+    
+    showData(3.14285714f)
+    showData(3.142857142857143)
+    showData('A')
+    showData(true)
+}
+fun <T> showData (x : T)
+{
+    println("Data Received : $x")
+}
+
+-----------------------------------> output :
+Data Received : Akshay
+Data Received : 125
+Data Received : 32761
+Data Received : 2147483645
+Data Received : 987654321123456789
+Data Received : 3.142857
+Data Received : 3.142857142857143
+Data Received : A
+Data Received : true
+___________________________________________________________________________________________________
+// generic Function accepts multiple parameter
+
+fun main(args: Array<String>)
+{
+    showData("Akshay",125.toByte(),32761.toShort(),2147483645,987654321123456789L,3.14285714f,3.142857142857143,'A',true)
+
+}
+fun <T> showData (stringValue : T,byteValue : T, shortValue : T,intValue : T,longValue : T, floatValue : T, doubleValue : T, charValue : T, boolValue : T)
+{
+    println("String     : $stringValue")
+    println("Byte       : $byteValue")
+    println("Short      : $shortValue")
+    println("Integer    : $intValue")
+    println("Long       : $longValue")
+    println("Float      : $floatValue")
+    println("Double     : $doubleValue")
+    println("Character  : $charValue")
+    println("Boolean    : $boolValue")
+}
+----------------------------------> output :
+
+String     : Akshay
+Byte       : 125
+Short      : 32761
+Integer    : 2147483645
+Long       : 987654321123456789
+Float      : 3.142857
+Double     : 3.142857142857143
+Character  : A
+Boolean    : true 
+
+___________________________________________________________________________________________________
+
+// generic Function inside Main Class
+
+class Main
+{
+    fun <T>show(x : T)
+    {
+        println("Main Class Show Method Received : $x")
+    }
+}
+
+fun main(args: Array<String>) {
+    val m = Main()
+    m.show("Akshay")
+    m.show(2147483645)
+    m.show(3.145)
+    m.show('A')
+    m.show(true)
+}
+----------------------------------> output : 
+Main Class Show Method Received : Akshay
+Main Class Show Method Received : 2147483645
+Main Class Show Method Received : 3.145
+Main Class Show Method Received : A
+Main Class Show Method Received : true
+
+___________________________________________________________________________________________________
+
+// generic Function inside Main Class accepts multiple parameter
+
+class Main
+{
+    fun <T>show(strValue : T, integerValue : T, doubleValue : T, charValue : T, boolValue : T)
+    {
+        println("String     : $strValue")
+        println("Integer    : $integerValue")
+        println("Double     : $doubleValue")
+        println("Character  : $charValue")
+        println("Boolean    : $boolValue")
+    }
+}
+
+fun main(args: Array<String>) {
+    val m = Main()
+    m.show("Akshay",2147483645,3.145,'A',true)
+}
+
+--------------------------------> output :
+String     : Akshay
+Integer    : 2147483645
+Double     : 3.145
+Character  : A
+Boolean    : true
+
+___________________________________________________________________________________________________
+// Generic Class 
+
+class Main<axe> (var name : axe,var age : axe)
+{
+    fun show()
+    {
+        println("$name : $age")
+    }
+}
+fun main(args: Array<String>)
+{
+    val m = Main("Akshay",21)
+    m.show()
+}
+-------------------------------> output : 
+Akshay : 21
+___________________________________________________________________________________________________
+
+
+

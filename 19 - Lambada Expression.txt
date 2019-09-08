@@ -1,0 +1,36 @@
+Source Code : Lambada passed as parameter to sum function TSRS
+
+fun main(args: Array<String>)
+{
+    var myLam : (Int,Int) -> Int = {x,y -> x+y}
+    sum(8,4,myLam)
+}
+fun sum(a : Int,b : Int, lamTakes : (Int,Int)-> Int){
+    println(lamTakes(a,b))
+}
+
+_______________________________________________________________________
+Source Code : Lambada passed as parameter to sum function  TSRN
+
+fun main(args: Array<String>){
+    var myLam : (Int,Int) -> Unit = {x , y -> print(x+y)}
+    sum(5,5,myLam)
+}
+fun sum(a : Int, b : Int, takeLam : (Int,Int) -> Unit ){
+    takeLam(a,b)
+}
+
+------------------------------OR--------------------------------------
+fun main(args: Array<String>) {
+    
+    var add : (String,Double) -> Unit = {
+        name,marks  -> println("$name : $marks")
+    }
+    show(add)
+}
+fun show(get : (String,Double) -> Unit)
+{
+    get("Akshay |Pawar",98.55)
+}
+
+*/

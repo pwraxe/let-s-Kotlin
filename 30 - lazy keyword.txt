@@ -1,0 +1,73 @@
+VARIABLE WORK ONLY WITH val   !var
+
+Syntax : 
+val variableName : Primitive_Non-PremitiveDataType by lazy{
+    initialialValueOfRespectedDataType
+}
+
+___________________________________________________________________________________________________
+
+var pi = lazy{
+        3.14
+}
+fun main(args: Array<String>) {
+    println(pi)
+}
+-------------output------------
+Lazy value not initialized yet.
+___________________________________________________________________________________________________
+
+val pi : Float by lazy {
+    3.14f
+}
+
+fun main(args: Array<String>) {
+    println("value of pi : $pi")
+}
+------------OUTPUT-------------
+value of pi : 3.14
+___________________________________________________________________________________________________
+
+val name : String by lazy{
+    "Akshay Pawar"
+}
+
+fun main(args: Array<String>)
+{
+    println("$name access by main() ")
+    show()
+}
+fun show()
+{
+    println("$name access by show()")
+}
+-----------OUTPUT------------
+Akshay Pawar access by main()
+Akshay Pawar access by show()
+
+___________________________________________________________________________________________________
+
+val name : String by lazy {
+    "Akshay Pawar"
+}
+class Main
+{
+    var n = name
+    fun show()
+    {
+        println("n = $n")
+        println("name : $name")
+    }
+}
+fun main(args: Array<String>)
+{
+    val m = Main()
+    m.show()
+    println("class variable n = ${m.n}")
+}
+
+-------------------OUTPUT-------------
+n = Akshay Pawar
+name : Akshay Pawar
+class variable n = Akshay Pawar
+

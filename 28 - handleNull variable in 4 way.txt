@@ -1,0 +1,81 @@
+/*
+* Handling null value by 4 easy steps :
+*
+* step 1 : safe call operator           (?.)
+* step 2 : safe call Assertion          (!!)
+* step 3 : safe call with let keyword   (?.let{...})
+* step 4 : Elvis Operator               (?:)
+* 
+*/
+
+fun main(args: Array<String>)
+{
+    var name : String? = null 
+    println("name is : $name")                    // safe call by ( ? )   	// OUTPUT :  name is : null
+    
+    if(name?.length == null){
+        println(" The length : ${name?.length}")   //  safe call by ( ?.)   // OUTPUT :  The leanght : null
+    }
+	
+}
+_________________________________________________________________________________________________________________________________________________________________________
+																											WAY 1 : SAFE CALL BY OPERATOR  (?   &  ?.)
+
+fun main(args: Array<String>)
+{
+    
+    
+	var name1 : String? = null
+	
+    println("name1 is : $name1")                         // safe call by ( ? ) && output --> name1 is : null
+
+    
+    if(name1?.length == null)
+        println("The length : ${name1?.length}")         // safe call by ( ?.) && output --> The length : null
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+																											WAY 2 : SAFE CALL BY "let{...}" keyword
+
+    //Following block executes if and only if name is not null
+
+    val name2 : String? = null
+    val name3 : String? = "Akshay"
+
+    // Case 1 : Initialised name2 variable as null
+    name2?.let {
+        println("name is : $name2")           //  This block will not execute
+    }
+
+    // Case 2 : Initialised name3 variable as Akshay
+    name3?.let {
+        println("name is : $name3")						//This block will execute because name3 has initialize with value "Akshay"
+    }
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+																											WAY 3 : SAFE CALL BY ASSERTION (!!)
+
+    // In This case we compulsory should know the value of name4 is NOT NULL otherwise throws KNPE
+
+    val name4 : String? = null
+    println("name is : ${name4 !! .length}")        // throws kotlin.KotlinNullPointerException
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+																											WAY 4 : ELVIS OPERATOR ( ?: )
+    var name5 : String? = null
+
+    //---- OLD WAY ------
+    if (name5 != null)
+        println(" the length : ${name5.length}")				this statement will not execute
+    else
+        -1
+
+    //---- Standard Way ----
+
+    var lngth = name5?.length ?: -1
+    println("the length by elvis : $lngth")        // o/p : the length by elvis : -1
+}
+
+
+

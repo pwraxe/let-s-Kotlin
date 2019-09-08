@@ -1,0 +1,77 @@
+fun main(args: Array<String>)
+{
+    val list = listOf<Int>(1,2,3,4,5,6,11,22,33,44,55,66,111,222,333,444,555,666)
+    val extract = list.filter { it in 11..99 }
+    for (ex in extract)
+        println(ex)
+}
+___________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    val list = listOf<Int>(1,2,3,4,5,6,11,22,33,44,55,66,111,222,333,444,555,666)
+    //val extract = list.filter { it in 11..99 }
+    //val extract = list.filter { it < 10 }
+    //val extract = list.filter { it > 10 }
+    val extract = list.filter { it in 11..99 }  //i.e. (it > 11 && it < 99)
+    for (ex in extract)
+        println(ex)
+}
+
+___________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    val list = listOf<Int>(1,2,3,4,5,6,11,22,33,44)
+    val m = list.map { it * it }
+                  // list.map{ it + 10 } 
+                  // list.map{ (it * it)/2}
+                  // list.map{ any lambda expression which return single value}
+    for (mp in m)
+        println(mp)
+}
+___________________________________________________________________________________
+
+fun main(args: Array<String>)
+{
+    val list = listOf<Int>(1,2,3,4,5,6,11,22,33,44,55,66,111,222,333,444,555,666)
+    val extract = list.filter { it in 1..9 } . map { it * it }
+    for (ex in extract)
+        println(ex)
+}
+/*
+----> val extract = list.filter { it in 1..9 } . map { it * it }  <----
+Explanation :
+    First it {extract/filter} all element  which is between 1 to 9 and then
+    it transform those extracted value in square form
+*/
+___________________________________________________________________________________
+
+class Main(var name : String, var age : Int) {}
+fun main(args: Array<String>)
+{
+    var list = listOf<Main>(
+            Main("Akshay",21),
+            Main("ALex",20),
+            Main("Amruta",21),
+            Main("Jack",25))
+
+    var n = list.filter{ it.name.startsWith("A")}
+    for ( name in n)
+        println()
+}
+___________________________________________________________________________________
+
+class Main(var name : String, var age : Int) {}
+fun main(args: Array<String>)
+{
+    var list = listOf<Main>(
+            Main("Akshay",23),
+            Main("ALex",20),
+            Main("Dom",20),
+            Main("Jack",25))
+
+    var n = list.map { 2019 - it.age }
+    for ( birthYear in n)
+        println("Birth Year : $birthYear")
+}

@@ -1,0 +1,81 @@
+import java.util.*
+/*
+* Scanner Class For input
+*/
+
+//  fun main(args : Array<String>){}      // from Kotlin 1.3 main parameter is not neccessory			
+
+fun main()												
+{
+    val s = Scanner(System.`in`)
+
+    print("Enter String : ")
+    val str :String? = s.next()
+
+    print("Enter Byte (-128 to +127) : ")
+    val b : Byte = s.nextByte()
+
+    print("Enter Short (-32768 to +32767) : ")
+    val sh : Short = s.nextShort()
+
+    print("enter Integer (-2147483648 to +2147483647)  :")
+    val i : Int = s.nextInt()
+
+    print("Enter Long (-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807) : ")
+    val l : Long = s.nextLong()
+
+    print("Enter Float (-3.4e38 to +3.4E38) : ")
+    val f : Float = s.nextFloat()
+
+    print("Enter Double (-1.7e308 to +1.7E308) : ")
+    val d : Double = s.nextDouble()
+
+    print("Enter any single Character : ")
+    val c : Char = s.next().first()
+
+
+    print("Enter value to get Character (0 to 65535) : ")
+    val cv : Char = s.nextInt().toChar()
+
+    print("Enter Boolean Value (true/false) : ")
+    val bool : Boolean = s.nextBoolean()
+    println("You Enter value : ")
+    println("String : $str")
+    println("Byte : $b")
+    println("Short : $sh")
+    println("Integer : $i")
+    println("Long : $l")
+    println("Float : $f")
+    println("Double : $d")
+    println("Character : $c")
+    println("Character by Integer Value : $cv")
+    println("Boolean : $bool")
+
+}
+
+------------------------------------OUTPUT-------------------------------------
+
+Enter String : Akshay
+Enter Byte (-128 to +127) : 100
+Enter Short (-32768 to +32767) : 30147
+enter Integer (-2147483648 to +2147483647)  :1122336655
+Enter Long (-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807) : 96575134375544
+Enter Float (-3.4e38 to +3.4E38) : 3.25896
+Enter Double (-1.7e308 to +1.7E308) : 3.415785236985
+Enter any single Character : A
+Enter value to get Character (0 to 65535) : 65
+Enter Boolean Value (true/false) : true
+
+Value Entered by you as : 
+String : Akshay
+Byte : 100
+Short : 30147
+Integer : 1122336655
+Long : 96575134375544
+Float : 3.25896
+Double : 3.415785236985
+Character : A
+Character by Integer Value : A
+Boolean : true
+
+Process finished with exit code 0

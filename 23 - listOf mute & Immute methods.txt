@@ -1,0 +1,169 @@
+//List can be
+var list : List<Float> = listOf<Float>(1.1f,2.2f,3.3f)
+var list : List<Double> = listOf<Double>(3.1,2.1,1.1)
+var list : List<Boolean> = listOf<Boolean>(true, false, false, true)
+var list : List<String> = listOf<String>("ANDROID","","IOS","MAC")
+________________________________________________________________________________________________________
+
+fun main(args: Array<String>) {
+    var list: List<Int> = listOf<Int>(1,2,3,5,8,4,7,8,8,8,8)  //mutable, Fix size, READ ONLY
+    for (l in list)
+        println(l)
+}
+--------------------------------------------------------------------
+fun main(args: Array<String>) {
+    var list : List<Char> = listOf('a','k','s','h','a','y')
+    for (l in list)
+        println(l) 
+}
+--------------------------------------------------------------------
+fun main(args: Array<String>) {
+    var list : List<Boolean> = listOf<Boolean>(true, false, false, true)
+    for (l in list)
+        println(l)
+}
+--------------------------------------------------------------------
+fun main(args: Array<String>) {
+    var muteList : MutableList<Int> = mutableListOf(1,2,3,4,2,1,2,2)
+    muteList.add(10)
+    muteList.remove(2)
+    for (l in mut
+        println(l)
+}
+//o/p : 1 3 4 2 1 2 2 10  it removes only first founded eeList)lement
+________________________________________________________________________________________________________
+________________________________________________________________________________________________________
+
+Source Code : Methods in listOf()
+
+fun main(args: Array<String>) 
+{
+    var l : List<Int> = listOf(1,2,3,2,1,4,5,6,5,4,7,8,9)
+    for (lst in l)
+        print(" "+lst)
+    println("\nl[2] : "+l[2])           	 //   
+    println("l.get(0) : "+l.get(0))       	 // 
+    println("l.indexOf(9) : "+l.indexOf(9))  //
+    println("l.lastIndex : "+l.lastIndex)
+    println("l.last() : "+l.last())
+    println("l.sublist(0,5) : "+l.subList(0,5))
+    println("l.binarySearch{1} : "+l.binarySearch { 1 })
+    println("l.binarySearch(5,0,l.size) : "+l.binarySearch(5,0,l.size))
+    println("l.asReversed() : "+l.asReversed())
+    println("l.size : "+l.size)
+    println("l.dropLast(9) : "+l.dropLast(9))
+    println("l.binarySearchBy(key = 9,fromIndex = 0,toIndex = l.size) : "+l.binarySearchBy(9,0,l.size,selector = {x->x*2}))
+    println("l.fisrt() : "+l.first())
+    println("l.firstOrNull() : "+l.firstOrNull())
+    //println("l.single() : "+l.single())
+    println("l.max() : "+l.max())
+    println("l.count() : "+l.count())
+
+}
+--------------------OUTPUT--------------------------------------------
+ 1 2 3 2 1 4 5 6 5 4 7 8 9
+l[2] : 3
+l.get(0) : 1
+l.indexOf(9) : 12
+l.lastIndex : 12
+l.last() : 9
+l.sublist(0,5) : [1, 2, 3, 2, 1]
+l.binarySearch{1} : -1
+l.binarySearch(5,0,l.size) : 6
+l.asReversed() : [9, 8, 7, 4, 5, 6, 5, 4, 1, 2, 3, 2, 1]
+l.size : 13
+l.dropLast(9) : [1, 2, 3, 2]
+l.binarySearchBy(key = 9,fromIndex = 0,toIndex = l.size) : -7
+l.fisrt() : 1
+l.firstOrNull() : 1
+l.max() : 9
+l.count() : 13
+
+________________________________________________________________________________________________________
+
+fun main(args: Array<String>) {
+    //var l :MutableList<Int> = mutableListOf(1,2,3,2,1,4,5,6,5,4,7,8,9)
+    var l = ArrayList<Int> (10)     // define 10 as initial capacity of an ArrayList
+    l.add(2)
+    l.add(5)
+    l[1]
+    l.add(4)
+    l.add(9)
+    l.add(1)
+    l.add(3,8)
+    for (lst in l)
+        print(" "+lst)
+    println("\nl[2] : "+l[2])           // o/p = 3
+    println("l.get(0) : "+l.get(0))       // o/p = 1
+    println("l.indexOf(9) : "+l.indexOf(9))   // o/p = 12
+    println("l.lastIndex : "+l.lastIndex)
+    println("l.last() : "+l.last())
+    println("l.sublist(0,5) : "+l.subList(0,5))
+    println("l.binarySearch{1} : "+l.binarySearch { 1 })
+    println("l.binarySearch(5,0,l.size) : "+l.binarySearch(5,0,l.size))
+    println("l.asReversed() : "+l.asReversed())
+    println("l.size : "+l.size)
+    println("l.dropLast(9) : "+l.dropLast(9))
+    println("l.binarySearchBy(key = 9,fromIndex = 0,toIndex = l.size) : "+l.binarySearchBy(9,0,l.size,selector = {x->x*2}))
+    println("l.fisrt() : "+l.first())
+    println("l.firstOrNull() : "+l.firstOrNull())
+    //println("l.single() : "+l.single())
+    println("l.max() : "+l.max())
+    println("l.count() : "+l.count())
+    println("___________________methods in mutable list__________________")
+    println("l.add(10) : "+l.add(10))
+    println("l.removeAt(0) : "+l.removeAt(0))
+    println("l.remove(10) : "+l.remove(10))
+    println("l.set(index = 2,element = 55) : "+l.set(2,55))
+
+    println("l.reverse() : "+l.reverse())
+    println("l.shuffle() : "+l.shuffle())
+    println("l.sort() : "+l.sort())
+    println("l.sortByDescending{-1} : "+l.sortByDescending { -1 })
+    println("l.fill(value = 0) : "+l.fill(0))
+    for (ls in l){print(" "+ls)}
+    println("____________________methods in arrayListOf ___________________________")
+    println("l.ensureCapacity(10) : "+l.ensureCapacity(10))
+    for (ls in l){print(" - "+ls)}
+    println()
+    println("l.trimToSize() : "+l.trimToSize())
+    println(" methods in ArrayList() same as arrayListOf() & mutableList()")
+
+}
+
+---------------------------------------------------OUTPUT--------------------------------------------
+ 2 5 4 8 9 1
+l[2] : 4
+l.get(0) : 2
+l.indexOf(9) : 4
+l.lastIndex : 5
+l.last() : 1
+l.sublist(0,5) : [2, 5, 4, 8, 9]
+l.binarySearch{1} : -1
+l.binarySearch(5,0,l.size) : -4
+l.asReversed() : [1, 9, 8, 4, 5, 2]
+l.size : 6
+l.dropLast(9) : []
+l.binarySearchBy(key = 9,fromIndex = 0,toIndex = l.size) : -4
+l.fisrt() : 2
+l.firstOrNull() : 2
+l.max() : 9
+l.count() : 6
+___________________methods in mutable list__________________
+l.add(10) : true
+l.removeAt(0) : 2
+l.remove(10) : true
+l.set(index = 2,element = 55) : 8
+l.reverse() : kotlin.Unit
+l.shuffle() : kotlin.Unit
+l.sort() : kotlin.Unit
+l.sortByDescending{-1} : kotlin.Unit
+l.fill(value = 0) : kotlin.Unit
+ 0 0 0 0 0____________________methods in arrayListOf ___________________________
+l.ensureCapacity(10) : kotlin.Unit
+ - 0 - 0 - 0 - 0 - 0
+l.trimToSize() : kotlin.Unit
+ methods in ArrayList() same as arrayListOf() & mutableList()
+ 
+ ________________________________________________________________________________________________________
+ 

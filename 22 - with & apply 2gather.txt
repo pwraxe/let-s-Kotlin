@@ -1,0 +1,42 @@
+class Main
+{
+    var name : String = ""
+    var age : Int = 0
+    var marks : Double = 0.0
+
+    fun show(a : Int){
+        println("This is show function in main class : $a")
+    }
+}
+
+fun main(args: Array<String>)
+{
+    val m = Main()
+    with(m)
+    {
+        name = "Alex"
+        age = 25
+        marks = 58.55
+        show(1)
+    }
+
+    m.apply()
+    {
+        name = "Akshay"
+        age = 21
+        marks = 98.55
+        show(2)
+    }.show(3)
+
+
+    println("${m.name} : ${m.age} : ${m.marks} ")
+
+}
+
+
+//--------------------------OUTPUT---------------------
+
+This is show function in main class : 1
+This is show function in main class : 2
+This is show function in main class : 3
+Akshay : 21 : 98.55 

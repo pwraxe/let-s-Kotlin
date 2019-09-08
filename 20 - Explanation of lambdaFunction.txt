@@ -1,0 +1,21 @@
+class Main
+{
+    fun makeRev(name : String, doRev : (String) -> Unit) = doRev(name)   // 4.
+}
+fun main(args: Array<String>)
+{
+    val m = Main()    // 1.
+    var name : (String) -> Unit = {str -> println(str.reversed())}  // 2.
+    m.makeRev("Akshay",name)     // 3.
+    
+}
+
+/*
+* Explanation of above points
+*
+*       1.  ==>    create an object of class Main
+*       2.  ==>    lambda function declaration line
+*       3.  ==>    calls the member function of class Main and pass variable of lambda expression
+*       4.  ==>    explicitly we give the function name as doRev and we call lambda function at point ( 2.)
+*                  and that lambada function has no return type hence executes there and Stops
+* */
