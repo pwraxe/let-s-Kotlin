@@ -132,7 +132,59 @@ fun main(args: Array<String>)
 }
 -------------------------------> output : 
 Akshay : 21
+
 ___________________________________________________________________________________________________
+
+
+class Main<S,I>(var name : S,var age : I)
+{
+    fun show()
+    {
+        println("$name : $age")
+    }
+}
+fun main()
+{
+    val m1 = Main("Akshay",23)
+    m1.show()
+    val m2 = Main(25,"Alex")
+    m2.show()
+    val m3 = Main(3.5,true)
+    m3.show()
+}
+--------------------------------> output : 
+Akshay : 23
+25 : Alex
+3.5 : true
+______________________________________________________________________________________________________
+
+interface Main
+{
+    fun <S>show(x : S)
+    {
+        println("$x")
+    }
+}
+fun main()
+{
+    val m = object : Main{
+        override fun <S> show(x: S) {
+            super.show(x)
+        }
+    }
+    m.show("Akshay")
+    m.show('a')
+    m.show(3.14)
+    m.show(1000)
+    m.show(true)
+
+}
+------------------------------------> output : 
+Akshay
+a
+3.14
+1000
+true
 
 
 
