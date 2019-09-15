@@ -183,6 +183,25 @@ fun main(args: Array<String>)
 -------------------> output : 
 java.lang.ArithmeticException: Age is under 18
 
+______________________________________________________________________________________________________
+// /customised throw Exception 
+
+class tooSmallAgeException : RuntimeException
+{
+    constructor(s :String) : super(s)
+}
+fun main() {
+    var age : Int = 18
+    if(age > 15)
+        throw tooSmallAgeException("Age is under 18")
+    else
+        println("You can understand Advance Science")
+
+}
+--------------------------------------------------------
+Exception in thread "main" tooSmallAgeException: Age is under 18
+	at MainKt.main(Main.kt:8)
+	at MainKt.main(Main.kt)
 
 
 
