@@ -1,0 +1,36 @@
+fun main() 
+{
+    println("Hello World")    
+}
+___________________________________________________________________
+
+class Main
+{
+    companion object
+    {
+        @JvmStatic
+        fun main(args: Array<String>)
+        {
+            println("Hello World")
+			Main().show()
+        }
+    }
+	fun show()
+	{
+		println("Show Method")
+	}
+}
+___________________________________________________________________
+
+object Main
+{
+    @JvmStatic
+    fun main(args: Array<String>) {
+        println("Hello World")
+		Main.show()
+    }
+	fun show()
+	{
+		println("Show Method")
+	}
+}
