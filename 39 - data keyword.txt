@@ -1,0 +1,38 @@
+// Data change hashCode Change
+// Data same hashCode Same
+
+data class Main (var name : String, var age : Int){}
+fun main()
+{
+    val m1 = Main("Akshay",23)
+    println("Hashcode of m1 : ${m1.hashCode()}")
+    val m2 = Main("Akshay",23)
+    println("Hashcode of m2 : ${m2.hashCode()}")
+
+    // case 1
+    val m3 = m1.copy()
+    println("Hashcode of m3 : ${m3.hashCode()}")
+
+    //case 2
+    val m4 = m1.copy(name = "Alex")
+    println("Hashcode of m4 : ${m4.hashCode()}")
+
+    //case 3
+    val m5 = m1.copy(age = 25)
+    println("Hashcode of m5 : ${m5.hashCode()}")
+
+    //case 4
+    val m6=m1.copy(name = "Vikram",age = 50)
+    println("Hashcode of m6 : ${m6.hashCode()}")
+
+
+}
+------------------------OUTPUT--------------------------
+
+Hashcode of m1 : 730916448
+Hashcode of m2 : 730916448
+Hashcode of m3 : 730916448
+
+Hashcode of m4 : 63347097
+Hashcode of m5 : 730916450
+Hashcode of m6 : 2124275660

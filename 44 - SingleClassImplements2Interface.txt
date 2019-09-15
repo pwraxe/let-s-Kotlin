@@ -1,0 +1,22 @@
+interface FirstInt
+{
+    fun shown()
+    {
+        println("FirstInt Shown")
+    }
+}
+interface SecondInt
+{
+    fun shown()
+    {
+        println("SecondInt Shown")
+    }
+}
+class Main : FirstInt,SecondInt
+{
+    override fun shown() {
+        super<FirstInt>.shown()
+        super<SecondInt>.shown()
+    }
+
+}

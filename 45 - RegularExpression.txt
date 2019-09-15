@@ -1,0 +1,85 @@
+// Should be exact match string for "true" output otherwise false at all time
+
+fun main()
+{
+    val name : String = "Akshay"
+    val regex = Regex("Akshay")
+    println(regex.matches(name))
+}
+_____________________________________________________________________
+
+fun main()
+{
+    val name : String = "Name"
+    val age : String = "Age"
+    val reg1 = Regex("Name")
+    val reg2 = Regex("Age")
+
+    when{
+        reg1.matches(name) -> println("Enter Name Later")
+        reg2.matches(age) -> println("Enter Age Later")
+    }
+}
+_____________________________________________________________________
+
+fun main() {
+    var  name = "NaME"
+    var r1 = Regex(name)
+    when{
+        r1.matches("name") -> println("name")
+        r1.matches("NAME") -> println("NAME")
+        r1.matches("Name") -> println("Name")
+        else -> println("Please type like this -> Name")
+    }
+}
+
+--------------------output
+
+if Regex("name")  output  name
+if Regex("Name")  output  Name
+if Regex("NAME")  output  NAME
+if Regex("NaMe")  output  Please type like this -> Name
+
+_____________________________________________________________________
+
+fun main() {
+
+    when{
+        Regex("Name").matches("name") -> println("name")
+        Regex("Name").matches("NAME") -> println("NAME")
+        Regex("Name").matches("Name") -> println("Name")
+        else -> println("Please type like this -> Name")
+    }
+}
+_____________________________________________________________________
+fun main() {
+    val matchResult = Regex("x|Y").find("Akshay")
+    val a = matchResult?.value
+    val b = matchResult?.value.orEmpty()
+    println("$a : $b")   // a = null and b = ""  .'.  null :
+
+    a?.toUpperCase()
+    b.toUpperCase()
+
+    println("$a : $b") //  a = null and b = ""  .'.  null :
+
+
+}
+
+_____________________________________________________________________
+
+// 10 Digit Mobile No Validation
+fun main() 
+{
+    var mobile = "9657513437"
+    var reg = Regex("""\d{10}""").matches(mobile)
+    if(reg)
+        println("Valid Mobile No")
+    else
+        println("Invalid Mobile no")
+}
+
+
+
+
+
