@@ -12,6 +12,7 @@ fun main() {
     checkMethod2(true)
     checkMethod2(3.14F)
     checkMethod2(3.145)
+    checkMethod2(null)
 
 
 
