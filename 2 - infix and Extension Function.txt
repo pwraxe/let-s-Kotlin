@@ -2,6 +2,15 @@
 	Extension Function and Infix keyword
 	a.add(b) after using infix in front of function -> a add b
 	a and b must object
+	
+	
+	to convert code redable format  like 
+	traditional method :  "Alex".from("NY")
+	standard Method :  "Alex" from "NY"
+	'from' is fun name
+	
+	
+	
 */
 
 
@@ -26,3 +35,28 @@ fun main(args: Array<String>)
     println(m1 add m2)
 
 }
+
+__________________________________________________________________________________________________________________________
+
+class Main(var name : String)
+
+fun main() {
+
+    val name = Main("Alex")
+    val dest = Main("New York")
+
+    println(name from  dest)
+
+}
+
+infix fun Main.from(main: Main) : String = "${this.name} from ${main.name}"
+
+------------------------------------------------------------------------
+output > 
+Alex from New York
+
+
+
+
+
+
