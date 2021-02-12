@@ -188,3 +188,40 @@ true
 
 
 
+____________________________________________________________________________________________________________
+
+
+fun main() {
+    anyData(1)
+    anyData(1.2F)
+    anyData(3.14)
+    anyData('A')
+    anyData("Akshay")
+    anyData(8888888888)
+    anyData(arrayOf("a","k","s","h","a","y"))
+}
+
+fun <ASP> anyData(data : ASP){
+    when(data){
+        is Int -> { println("Int : $data") }
+        is Float -> { println("Float : $data") }
+        is Double -> { println("Double : $data") }
+        is Char -> { println("Char :  $data") }
+        is String -> { println("String : $data") }
+        is Long -> { println("Long $data") }
+        else -> { println("Array : $data") }
+    }
+}
+---------------------------------------------------------------------------- output > 
+Int : 1
+Float : 1.2
+Double : 3.14
+Char :  A
+String : Akshay
+Long 8888888888
+Array : [Ljava.lang.String;@7f31245a
+
+
+
+
+
