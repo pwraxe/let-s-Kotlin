@@ -1,7 +1,6 @@
 - we can write main() fun without any param from kotlin version 1.3
 - when you declare any variable that will be NotNull by default i.e you cannot store null init hence Kotlin Saves from NullPointerException mostly
 - to making variable nullable '?' is imp Ex. var name : String? = null
-- In Inheritance : if any class wants to extends then open it, bydefault any class in kotlin is final or not extendable
-- open class makes it extendable and open method makes overridable
+- In Inheritance : if any class wants to extends then open it, and method wants override then open it. 
 - In Kotlin any class and method inside class is final by default
 - No need to define var keyword in sub class Constructor if you wants to send that param to super class
