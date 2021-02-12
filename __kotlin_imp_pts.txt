@@ -1,0 +1,1 @@
+- we can write main() fun without any param from kotlin version 1.3
