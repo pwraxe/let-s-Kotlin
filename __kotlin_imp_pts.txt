@@ -4,3 +4,4 @@
 - In Inheritance : if any class wants to extends then open it, and method wants override then open it. 
 - In Kotlin any class and method inside class is final by default
 - No need to define var keyword in sub class Constructor if you wants to send that param to super class
+- Kotlin uses '==' for structural comparison and '===' for referential comparison.
