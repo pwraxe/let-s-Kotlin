@@ -43,6 +43,26 @@ fun main() {
     println(sizeOf("Hello World!"))
 }
 
+_______________________________________________________________________
+
+val getCountry : (Int) -> String = {
+    when(it){
+        1 -> "Canada"
+        7 -> "Russia"
+        30 -> "Greece"
+        39 -> "Italy"
+        91 -> "India"
+        55 -> "Brazil"
+        else -> ""
+    }
+}
+
+fun main() {
+    println(getCountry(91))
+}
+
+
+
 
 */
 
