@@ -33,4 +33,16 @@ fun show(get : (String,Double) -> Unit)
     get("Akshay |Pawar",98.55)
 }
 
+_______________________________________________________________________
+
+val toUp : (String) -> String = { s : String -> s.toUpperCase() }
+val sizeOf : (String) -> Int = { it.length }
+
+fun main() {
+    println(toUp("india"))
+    println(sizeOf("Hello World!"))
+}
+
+
 */
+
