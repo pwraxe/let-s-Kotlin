@@ -6,3 +6,8 @@
 - No need to define var keyword in sub class Constructor if you wants to send that param to super class
 - Kotlin uses '==' for structural comparison and '===' for referential comparison.
 - Only One companion object is allowed in single kotlin class
+- In listOf() >
+    val list = listOf(...)
+      1. list.any { condition } => return true if any element in list which satisfies our conditions    //work like ||
+      2. list.all { condition } => return true if all element in list which satisfies our conditions    //work like &&
+      3. list.none {condition } => return true if none of element in list which satisfies our condition //work like !
