@@ -58,3 +58,36 @@ fun main() {
     println("al.any()  :  ${al.any()}")                 // true
 }
 ________________________________________________________________________________________________________
+
+fun main() {
+
+    val mutable = mutableListOf("MH","MH","GJ","RJ","DL","DL","HP","J&K", "DD","SK","AP","TN","TS","KL","KK","MP")
+
+    println("1 : $mutable")     // 1 : [MH, MH, GJ, RJ, DL, DL, HP, J&K, DD, SK, AP, TN, TS, KL, KK, MP]
+
+    mutable.removeIf{ it == "MH" }
+    println("2 : $mutable")     // 2 : [GJ, RJ, DL, DL, HP, J&K, DD, SK, AP, TN, TS, KL, KK, MP]
+
+    mutable.removeIf{ it.contains("D")}
+    println("3 : $mutable")         // 3 : [GJ, RJ, HP, J&K, SK, AP, TN, TS, KL, KK, MP]
+
+    mutable.add(0,"AAA")
+
+    println("4 : $mutable")         // 4 : [AAA, GJ, RJ, HP, J&K, SK, AP, TN, TS, KL, KK, MP]
+
+    println("5 : mutable.asReversed()  :  ${mutable.asReversed()}")     //5 : mutable.asReversed()  :  [MP, KK, KL, TS, TN, AP, SK, J&K, HP, RJ, GJ, AAA]
+
+    println("6 : mutable.fill(\"LUCK\") :  ${mutable.fill("LUCK")}") // 6 : mutable.fill("LUCK") :  kotlin.Unit
+
+    println("7 : ${mutable}")   //7 : [LUCK, LUCK, LUCK, LUCK, LUCK, LUCK, LUCK, LUCK, LUCK, LUCK, LUCK, LUCK]
+
+    println("8 : mutable.removeAll { it.contains(\"U\") } :  ${mutable.removeAll { it.contains("U") }}")  //8 : mutable.removeAll { it.contains("U") } :  true
+
+    println("9 : ${mutable}")  // 9 : []
+    
+}
+________________________________________________________________________________________________________
+
+________________________________________________________________________________________________________
+
+________________________________________________________________________________________________________
