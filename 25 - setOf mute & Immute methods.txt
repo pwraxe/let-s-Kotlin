@@ -1,9 +1,9 @@
 
  /* The Class
-    setOf<DT>(elements)  ==  listOf<DT>(elements)
+    setOf<DT>(elements)  !=  listOf<DT>(elements)
     difference :
-        1. setOf NOT display duplicates element
-        2. listOf display duplicates element
+        1. setOf   NOT display duplicates element
+        2. listOf      display duplicates element
 */
 
 fun main(args: Array<String>)
