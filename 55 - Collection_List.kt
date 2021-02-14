@@ -18,3 +18,18 @@ fun main() {
     println(list_mutable_filled) // [Aa, Bb]
 }
 ________________________________________________________________________________________________________
+
+fun main() {
+
+    val state = arrayOf("MH","MH","GJ","RJ","DL","DL","HP","J&K","DD","SK","AP","TN","TS","KL","KK","MP")
+
+    val al = object : AbstractList<String>(){
+
+        override val size: Int = state.size
+
+        override fun get(index: Int): String{
+            return state[index]
+        }
+    }
+    println(al)
+________________________________________________________________________________________________________
