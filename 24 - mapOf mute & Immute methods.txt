@@ -81,6 +81,19 @@ fun main(args: Array<String>)
 }
 ____________________________________________________________________________________________________________________________
 
+   
+- In mapOf() > 
+    val map = maoOf(.. , ..)
+        1. map["keyName"] => return respected value
+        2. map.get("keyName") => return respected value
+        3. map.getValue("name") => return respected value
+        4. map["UnknownKeyName"] => return null if map not contain specified key
+        4. map.get("UnknownKeyName") => return null if map not contain specified key
+        5. map.getValue("UnknownKeyName") => NoSuchElementException occure if no specified key found in map
+        6. map.getOrDefault("keyName","DefaultValue") => if map contain specified key then return its value else return DefaultValue
+        
+        
+        
 
 
 
