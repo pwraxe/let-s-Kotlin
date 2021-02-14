@@ -88,6 +88,59 @@ fun main() {
 }
 ________________________________________________________________________________________________________
 
+data class Student(var id : Int, var name : String, var email : String, val mobile : Long)
+
+fun main() {
+    val list = mutableListOf<Student>()
+    list.add(Student(1,"Alex","alex@gmail.com",9988776655))
+    list.add(Student(2,"Berry","ber@yahoo.com",8877665544))
+    list.add(Student(3,"Charline","charlie@hotmail.com",7766554433))
+    list.add(Student(4,"Dom","dom@yandex.com",6677889900))
+
+    println(list)    /* will print following
+    [
+      Student(id=1, name=Alex, email=alex@gmail.com, mobile=9988776655), 
+      Student(id=2, name=Berry, email=ber@yahoo.com, mobile=8877665544), 
+      Student(id=3, name=Charline, email=charlie@hotmail.com, mobile=7766554433), 
+      Student(id=4, name=Dom, email=dom@yandex.com, mobile=6677889900)
+    ] */
+  
+    //-----------------------------------------------------------------------------------------------------
+    val email = list.associateBy { it.email }  // email becomes keys of list
+    println(email)   /* will print following 
+    {
+        alex@gmail.com=Student(id=1, name=Alex, email=alex@gmail.com, mobile=9988776655), 
+        ber@yahoo.com=Student(id=2, name=Berry, email=ber@yahoo.com, mobile=8877665544), 
+        charlie@hotmail.com=Student(id=3, name=Charline, email=charlie@hotmail.com, mobile=7766554433),
+        dom@yandex.com=Student(id=4, name=Dom, email=dom@yandex.com, mobile=6677889900)
+    }*/
+    //-----------------------------------------------------------------------------------------------------
+    
+    val nameMobile = list.associateBy(Student::name,Student::mobile)
+    println(nameMobile) /* will print following
+    {
+        Alex=9988776655, 
+        Berry=8877665544, 
+        Charline=7766554433, 
+        Dom=6677889900
+    }*/
+    //-----------------------------------------------------------------------------------------------------
+    
+    val nameMobile = list.groupBy(Student::name,Student::mobile)
+    println(nameMobile)
+    /*
+    {
+        Alex=[9988776655], 
+        Berry=[8877665544], 
+        Charline=[7766554433], 
+        Dom=[6677889900]
+    }
+    */
+
+}
+
+
+
 ________________________________________________________________________________________________________
 
 ________________________________________________________________________________________________________
