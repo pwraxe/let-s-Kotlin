@@ -23,4 +23,10 @@
      14. list.lastOrNull { condition } => if(listIsNotEmpty) return last founded last element from list which satisfies our condition else return null
      15. list.count() => return size of array
      16. list.count{ condition } => return size of array which satisfies our condition
+     17. list.numbers.minOrNull() => return min number from list
+     18. list.numbers.maxOrNull() => return max number from list
+     20. list.sorted() => sort array in asc order
+     21. list.sortedBy { -it }  => sort array in desc order
+     22. list.sortedDescending() => sort array in desc order
+     23. list.sortedByDescending { it % 2 == 0 }  => sort first given condition then remain takes as it is
       
