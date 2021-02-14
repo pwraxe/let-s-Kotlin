@@ -32,4 +32,29 @@ fun main() {
         }
     }
     println(al)
+}
+________________________________________________________________________________________________________
+
+fun main() {
+
+    val state = arrayOf("MH","MH","GJ","RJ","DL","DL","HP",
+        "J&K","DD","SK","AP","TN","TS","KL","KK","MP")
+
+    val al = object : AbstractList<String>(){
+
+        override val size: Int = state.size
+
+        override fun get(index: Int): String{
+            return state[index]
+        }
+    }
+    al.forEach { println("al : $it") }                  // print every string as it is
+    al.stream().forEach { println("al.stream : $it") }  // print every string as it is
+    al.parallelStream().forEach { println("al.parallelStream : $it") }  //prints randomly
+    println("al.contains : ${al.contains("MH")}")       // true
+    println("al.isEmpty : ${al.isEmpty()}")             // false
+    println("al.last()  : ${al.last()}")                // MP
+    println("al.sorted() : ${al.sorted()}")             // print sorted list
+    println("al.any()  :  ${al.any()}")                 // true
+}
 ________________________________________________________________________________________________________
