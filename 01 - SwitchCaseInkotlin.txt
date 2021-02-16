@@ -2,7 +2,7 @@ fun main(args: Array<String>) {
     var x: Int = 4
     when (x)
     {
-        1 -> {
+        1,10 -> {               --------> can give multiple option on single block
             print("one")
             print("One")
             print("ONE")
