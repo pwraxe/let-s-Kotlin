@@ -14,6 +14,7 @@ fun main(args: Array<String>) {
         }
 
         3 -> print("Three")
+        
         4 ->
         {
             print("Four")
@@ -25,6 +26,20 @@ fun main(args: Array<String>) {
                 3 -> print("Nested Three")
             }
         }
+        in 10..12 -> 
+        { 
+            print("between 10 to 12") 
+        }
+        
+        in 'a'.toInt()..'z'.toInt() -> {
+            print("in alpha range ")
+        }
+        
+        else -> 
+        {
+            print("default in switch case")
+        }
+        
     }
 }
 
