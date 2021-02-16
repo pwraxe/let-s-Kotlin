@@ -7,3 +7,4 @@
 - Kotlin uses '==' for structural comparison and '===' for referential comparison.
 - Only One companion object is allowed in single kotlin class
 - boilerplate code mean repetation of code at multiple places
+- we can write fun inside fun
