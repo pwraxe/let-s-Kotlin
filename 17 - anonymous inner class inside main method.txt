@@ -23,3 +23,33 @@ fun main(args: Array<String>)
     println("Shop Type : "+m.shopType())
     println("----------------------------------")
 }
+______________________________________________________________________________________________________________
+
+interface Person{
+    var name : String
+    var age : Int
+    var gender : String
+    fun show()
+
+}
+
+fun main() {
+
+    val person = object : Person{
+        override var name: String
+            get() = "Akshay"
+            set(value) {}
+        override var age: Int
+            get() = 24
+            set(value) {}
+        override var gender: String
+            get() = "Male"
+            set(value) {}
+
+        override fun show() {
+            println("$name / $age / $gender")
+        }
+    }
+
+    person.show()
+}
