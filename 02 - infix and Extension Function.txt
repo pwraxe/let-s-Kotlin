@@ -55,7 +55,19 @@ infix fun Main.from(main: Main) : String = "${this.name} from ${main.name}"
 output > 
 Alex from New York
 
+________________________________________________________________________________________________________
 
+class Main {
+    companion object
+}
+
+fun Main.Companion.show() {  			//------------------> fun of companion obj
+    println("Companion object show")
+}
+
+fun main() {
+    Main.show()
+}
 
 
 
