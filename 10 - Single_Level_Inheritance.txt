@@ -18,6 +18,25 @@ class Student(department : String,id : Int,name : String,age : Int,mobile : Long
 }
 fun main(args: Array<String>)
 {
-    val s = Student("IT",3437,"Akshay Pawar",22,9657513437)
+    val s = Student("IT",3437,"Akshay Pawar",22,99xxxx9999)
     s.show()
+}
+___________________________________________________________________________________________________________________________________
+
+interface Person{
+    var name : String
+    var age : Int
+    var gender : String
+
+    fun show()
+
+}
+class Main(override var name: String, override var age: Int, override var gender: String) : Person{
+    override fun show() {
+        println("$name | $age | $gender")
+    }
+}
+
+fun main() {
+    Main("Akshay",24,"Male").show()
 }
