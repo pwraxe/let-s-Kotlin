@@ -8,3 +8,5 @@
 - Only One companion object is allowed in single kotlin class
 - boilerplate code mean repetation of code at multiple places
 - we can write fun inside fun
+- every our created class, method, variable is final by default, we need to 'open' it for override
+
