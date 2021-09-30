@@ -1,6 +1,7 @@
 // Sealed Class seale those classes which is declare inside the sealed Class 
 // Here Main is sealed class which seale the class Circle, Rect, Square
 // We can access declared class inside the sealed class by classnames
+// One Seal can inherite only other seal class (see last ex)
 ------------------------------------------------------------------------
 // // sealed Class in case of declared class
 sealed class Main
@@ -178,4 +179,26 @@ Main Class show() method for : Rectangle
 Square Area : 25
 Main Class show() method for : Square
 
+______________________________________________________________________________________________________________
+//One Seal Class can inherite other SEAL Class Only
+
+sealed class Main {
+    class Main_1() { fun show(){ println("Main > Main 1") } }
+    class Main_2() { fun show(){ println("Main > Main 2") } }
+    class Main_3() { fun show(){ println("Main > Main 3") } }
+}
+
+sealed class Sub : Main(){
+    class SubMain{
+        fun show(){
+            Main_1().show()
+            Main_2().show()
+            Main_3().show()
+        }
+    }
+}
+
+fun main() {
+    Sub.SubMain().show()
+}   
 
