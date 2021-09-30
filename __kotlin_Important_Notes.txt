@@ -9,4 +9,5 @@
 - boilerplate code mean repetation of code at multiple places
 - we can write fun inside fun
 - every our created class, method, variable is final by default, we need to 'open' it for override
+- Every class has default constructor next to class name, write explicitly if want to give annotation to class else constructor keyword is optional to write next to class name
 
