@@ -10,4 +10,4 @@
 - we can write fun inside fun
 - every our created class, method, variable is final by default, we need to 'open' it for override
 - Every class has default constructor next to class name, write explicitly if want to give annotation to class else constructor keyword is optional to write next to class name
-
+- Only one seal class can inherite to other seal class only 
