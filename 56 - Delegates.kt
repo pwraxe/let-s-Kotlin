@@ -52,3 +52,12 @@ fun main() {
     media.fileDownloader.download()
     media.filePlayer.play()
 }
+_________________________________________________________________________________________________________________________________________________
+
+Delegated properties
+
+Lazy properties         :  the value gets computed only upon first access.
+Observable properties   :  listeners get notified about changes to this property.
+Storing properties in a map, :  instead of a separate field for each property.
+
+
