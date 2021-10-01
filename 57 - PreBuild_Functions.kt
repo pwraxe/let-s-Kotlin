@@ -42,4 +42,8 @@ fun main() {
     println()
     println("==> ${num.filterIndexed { index, i -> index > i }}")     //==> [5, 5, 5, 2, 1, 4, 5, 2, 1, 4, 4]
     println("--> ${num.filterIsInstance<Int>()}")       // --> [1, 22, 5, 4, 8, 8, 5, 5, 5, 2, 1, 4, 5, 2, 1, 4, 4, 45]
+    
+    
+    val text = listOf("a","k","s","h","a","y")
+    text.filterIsInstance<String>().forEach { print(it.uppercase(Locale.getDefault())) }
 }
