@@ -1,3 +1,28 @@
+Object block
+============
+
+fun main() {
+    val name = object {
+        override fun toString(): String = "Alex Bush"
+        fun show(){
+            println("show")
+        }
+    }
+    println(name.toString())
+    name.show()
+} 
+________________________________________________________________________________________________________________________
+class Main {
+    val name = object{
+        override fun toString(): String = "I am Developer"
+    }
+}
+fun main() {
+    println(Main().name.toString())
+}
+________________________________________________________________________________________________________________________
+
+
 open class Boss
 {
     var sal : Int = 50000
