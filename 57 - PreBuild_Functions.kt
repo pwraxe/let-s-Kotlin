@@ -26,3 +26,20 @@ fun main() {
     val text = listOf("A","B","C","D","E","F","G")
     println(text.joinToString())    // A, B, C, D, E, F, G
 }
+
+___________________________________________________________________________________________
+
+--------> filter()
+
+fun main() {
+    val num = listOf(1,22,5,4,8,8,5,5,5,2,1,4,5,2,1,4,4,45)
+
+    num.filter { it > 5 }.forEach { print(" $it") }     //  22 8 8 45
+    println()
+    num.filterNotNull().forEach { print(" $it") }       //  1 22 5 4 8 8 5 5 5 2 1 4 5 2 1 4 4 45
+    println()
+    num.filterNot { it < 5 }.forEach { print(" $it") }  //  22 5 8 8 5 5 5 5 45
+    println()
+    println("==> ${num.filterIndexed { index, i -> index > i }}")     //==> [5, 5, 5, 2, 1, 4, 5, 2, 1, 4, 4]
+    println("--> ${num.filterIsInstance<Int>()}")       // --> [1, 22, 5, 4, 8, 8, 5, 5, 5, 2, 1, 4, 5, 2, 1, 4, 4, 45]
+}
