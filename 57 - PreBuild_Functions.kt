@@ -47,3 +47,24 @@ fun main() {
     val text = listOf("a","k","s","h","a","y")
     text.filterIsInstance<String>().forEach { print(it.uppercase(Locale.getDefault())) }
 }
+
+____________________________________________________________________________________________
+
+--------> partition{ }
+
+fun main() {
+    val list = listOf("Akshay",100,true,"Aman",84,false,"Aryan",25,true,"Sam",16,"Kolkata",12,15,true)
+
+    val part1 = list.partition { it is String }
+    println("Part 1 : $part1")  // Part 1 : ([Akshay, Aman, Aryan, Sam, Kolkata], [100, true, 84, false, 25, true, 16, 12, 15, true])
+
+    val part2 = list.partition { it is String && it is Int }
+    println("Part 2 : $part2")  // Part 2 : ([], [Akshay, 100, true, Aman, 84, false, Aryan, 25, true, Sam, 16, Kolkata, 12, 15, true])
+
+    val part3 = list.partition { it is String || it is Boolean }
+    println("Part 3 : $part3")  // Part 3 : ([Akshay, true, Aman, false, Aryan, true, Sam, Kolkata, true], [100, 84, 25, 16, 12, 15])
+
+    val part4 = list.partition { it is Int }
+    println("Part 4 : $part4")  // Part 4 : ([100, 84, 25, 16, 12, 15], [Akshay, true, Aman, false, Aryan, true, Sam, Kolkata, true])
+
+}
