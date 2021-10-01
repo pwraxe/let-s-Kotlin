@@ -66,5 +66,38 @@ fun main() {
 
     val part4 = list.partition { it is Int }
     println("Part 4 : $part4")  // Part 4 : ([100, 84, 25, 16, 12, 15], [Akshay, true, Aman, false, Aryan, true, Sam, Kolkata, true])
-
 }
+
+________________________________________________________________________________________________
+
+--------> take and drop () 
+
+fun main() {
+    val list = listOf(1,2,3,4,5,6,7,8,9)
+
+    val take1 = list.take(4)                 // takes first 4 nums
+    println("1 -------> $take1")                // 1 -------> [1, 2, 3, 4]
+
+    val take2 = list.takeLast(2)            // takes last 2 nums
+    println("2 -------> $take2")               // 2 -------> [8, 9]
+
+    val take3 = list.takeWhile { it in 5..7 }  // take only those numbers which between 5..7
+    println("3 -------> $take3")               // 3 -------> []
+
+    val take4 = list.takeLastWhile { it > 7 }   // take last nums which > 7
+    println("4 -------> $take4")                // 4 -------> [8, 9]
+
+    val drop1 = list.drop(2)                 // drop/delete first 2 nums
+    println("5 -------> $drop1")                // 5 -------> [3, 4, 5, 6, 7, 8, 9]
+
+    val drop2 = list.dropLast(3) // drop/delete last 3 nums
+    println("6 -------> $drop2")                // 6 -------> [1, 2, 3, 4, 5, 6]
+
+    val drop3 = list.dropWhile { it < 8 }    // drop/delete all odd numbers
+    println("7 -------> $drop3")                // 7 -------> [8, 9]
+
+    val drop4 = list.dropLastWhile { it > 7 }   // drop/delete last nums less than 7
+    println("8 -------> $drop4")                // 8 -------> [1, 2, 3, 4, 5, 6, 7]
+}
+
+
