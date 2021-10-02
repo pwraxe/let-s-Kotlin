@@ -131,4 +131,11 @@ fun main() {
 }
 _____________________________________________________________________________________________________
 
+--------> slice()
 
+fun main() {
+    val numbers = listOf("one", "two", "three", "four", "five", "six")
+
+    println(numbers.slice(1..4))        //[two, three, four, five]
+    println(numbers.slice(1..5 step 2)) //[two, four, six]
+}
