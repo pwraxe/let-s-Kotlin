@@ -139,3 +139,26 @@ fun main() {
     println(numbers.slice(1..4))        //[two, three, four, five]
     println(numbers.slice(1..5 step 2)) //[two, four, six]
 }
+
+_____________________________________________________________________________________________________
+
+---------> Retrieving Element
+ fun main() {
+    val numbers = listOf("one", "two", "three", "four", "five", "six")
+
+    // Retrieving element
+    println("1 ------> : ${numbers.elementAt(2)}")                     // 1 ------> : three
+    println("2 ------> : ${numbers.first()}")                          // 2 ------> : one
+    println("3 ------> : ${numbers.first { it.length == 5 }}")         // 3 ------> : three
+    println("4 ------> : ${numbers.first { it.startsWith("f") }}")     // 4 ------> : four
+    println("5 ------> : ${numbers.find { it.length > 4 }}")           // 5 ------> : three
+    println("6 ------> : ${numbers.random()}")                         // 6 ------> : five
+    println("7 ------> : ${numbers.randomOrNull()}")                   // 7 ------> : one
+
+    //check element existence
+    println("8 ------> : ${numbers.contains("five")}")                 // 8 ------> : true
+    println("9 ------> : ${"zero" in numbers}")                        // 9 ------> : false
+
+    println("10------> : ${numbers.isEmpty()}")                        // 10------> : false
+    println("11------> : ${numbers.isNotEmpty()}")                     // 11------> : true
+}
