@@ -162,3 +162,28 @@ ________________________________________________________________________________
     println("10------> : ${numbers.isEmpty()}")                        // 10------> : false
     println("11------> : ${numbers.isNotEmpty()}")                     // 11------> : true
 }
+ 
+ _________________________________________________________________________________________________________
+
+---------> aggregate functions
+
+fun main() {
+    val list = listOf(1,22,5,4,8,8,5,4,1,2,2,25,4,7,5,2,3,6,9,8,4,1,2,55,0,152,1,1,4,85,4,4,1,1,1,2,2,2,2,0,0,150)
+
+    val numbers = list.toSet().sorted()
+    println(numbers)                    // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 22, 25, 55, 85, 150, 152]
+
+    println(numbers.minOrNull())        // 0
+    println(numbers.maxOrNull())        // 152
+
+    println(numbers.minOf { it < 10 })  // false
+    println(numbers.maxOf { it > 100 }) // true
+
+    println(numbers.average())          // 33.375
+    println(numbers.sum())              // 534
+    println(numbers.count())            // 16
+
+    println(numbers.minByOrNull { it%2 == 0 })  // 1
+    println(numbers.maxByOrNull { it%2 == 1 })  // 1
+}
+
