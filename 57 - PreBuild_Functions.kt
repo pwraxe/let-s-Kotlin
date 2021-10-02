@@ -116,6 +116,19 @@ fun main() {
 }
 
 _____________________________________________________________________________________________________
+-------> groupBy()
 
+fun main() {
+    val list = listOf(1,2,3,4,5,6,7,8,9)
+    println(list.groupBy { it > 5 })            // {false=[1, 2, 3, 4, 5], true=[6, 7, 8, 9]}
+    println(list.groupBy { it%2 == 0 })         //{false=[1, 3, 5, 7, 9], true=[2, 4, 6, 8]}
+    
+    val text = listOf("Google","Xerox","Microsoft","Apple")
+    println(text.groupBy { it.length >5 })      //{true=[Google, Microsoft], false=[Xerox, Apple]}
+    
+    println(text.groupBy(keySelector = { it.first() },valueTransform = { it.uppercase(Locale.getDefault()) }))  //{G=[GOOGLE], X=[XEROX], M=[MICROSOFT], A=[APPLE]}
+    println(text.groupingBy { it.first() }.eachCount()) // {G=1, X=1, M=1, A=1}
+}
+_____________________________________________________________________________________________________
 
 
