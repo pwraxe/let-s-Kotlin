@@ -3,6 +3,12 @@ in Android Studio add following lib
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5'
 
+    
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+
+____________________________________________________________________________________________________________________________________________________________________
+
 Few Notes about Coroutine
     - delay(0L) ---> this is suspend function so you only have to call from either in launch{ .. } or suspend function 
     - code sequentially run inside suspend fun 
@@ -16,7 +22,8 @@ Few Notes about Coroutine
             // lets the coroutine resume in whatever thread that is used by the corresponding suspending function
     - runBlocking{} ===> This Block run on main thread. It block main thread till execution completion in runBlock 
     - If we have multiple runBlocking{} it executes sequentially
-    - TO cancel job first check whether .cancel() block executes or not by if(isActive) 
+    - To cancel job first check whether .cancel() block executes or not by if(isActive) 
+    - lifecycleScope --> coroutine executes till activity or fragment lifecycle alive
 
 _________________________________________________________________________________________________________________________________
 // following both global scope work parallely unfix sequence
