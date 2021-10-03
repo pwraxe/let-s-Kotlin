@@ -62,11 +62,34 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-output : //following same sequence for 20 times
+output : //following same sequence executes for 20 times
 
-D/AXE: Thread Unconfined Working : 0..20
-D/AXE: Thread Default Working : 0..20
-D/AXE: Thread IO Working : 0..20
-D/AXE: Thread Main Working : 0..20
+D/AXE: Thread Unconfined Working
+D/AXE: Thread Default Working : 
+D/AXE: Thread IO Working : 0
+D/AXE: Thread Main Working : 0
+________________________________________________________________________________________________________________________
+
+// Switch between Threads 
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        GlobalScope.launch(Dispatchers.IO) {
+            doWork("IO")                                        // control stuck here till doWork complete its execution
+            withContext(Dispatchers.Main){ doWork("Main") }     // IO Thread Join to Main Thread here
+        }
+    }
+
+    private suspend fun doWork(name:String){
+        repeat(20){
+            delay(1500L)
+            Log.d("AXE","Thread $name Working : $it")
+        }
+    }
+}
+
+
+
 
 
