@@ -16,6 +16,7 @@ Few Notes about Coroutine
             // lets the coroutine resume in whatever thread that is used by the corresponding suspending function
     - runBlocking{} ===> This Block run on main thread. It block main thread till execution completion in runBlock 
     - If we have multiple runBlocking{} it executes sequentially
+    - TO cancel job first check whether .cancel() block executes or not by if(isActive) 
 
 _________________________________________________________________________________________________________________________________
 // following both global scope work parallely unfix sequence
@@ -92,7 +93,101 @@ class MainActivity : AppCompatActivity() {
 }
 _____________________________________________________________________________________________________________________________________________________
 
+class MainActivity : ...{
+    
+    onCreate(){
+         val job = GlobalScope.launch(Dispatchers.Default){
+            repeat(5){
+                Log.d("AXE","global launch : $it")
+                delay(1000)
+            }
+        }
 
+        runBlocking {
+            Log.d("AXE","run block launch")
+        }
+    }
+}
+// runBlocking executes at any time can't say sequence
+
+______________________________________________________________________________________________________________________________________________________
+
+join () ====> 
+    
+class MainActivity : ...{
+
+    onCreate(){
+        val job = GlobalScope.launch(Dispatchers.Default){
+            repeat(5){
+                Log.d("AXE","global launch : $it")
+                delay(1000)
+            }
+        }
+
+        runBlocking {
+            job.join()                                      // once above code done with execution, this thread continue to run
+            job.cancel()   // cancel the job
+            Log.d("AXE","run block launch")
+        }
+    }
+}
+__________________________________________________________________________________________________________________________________________________________
+
+make thread run parallal 
+
+class MainActivity : AppCom..{
+
+    onCreate(){
+    
+        GlobalScope.launch {
+            val time = measureTimeMillis {
+                launch { doWork1() }
+                launch { doWork2() }
+            }
+            Log.d("AXE","Time taken : $time")   // 2s
+        }
+    }
+     private suspend fun doWork1(){
+        delay(2000L)
+        Log.d("AXE","Do Work 1")
+    }
+
+    private suspend fun doWork2(){
+        delay(2000L)
+        Log.d("AXE","Do Work 2")
+    }
+}
+
+===============================OR=============================
+class MainActivity : AppCom..{
+
+    onCreate(){ 
+        GlobalScope.launch {
+            val time = measureTimeMillis {
+                val work1 = async { doWork1() }
+                val work2 = async { doWork2() }
+
+                Log.d("AXE", work1.await())
+                Log.d("AXE", work2.await())
+            }
+            Log.d("AXE","Time taken : $time")   //2013 Second
+
+        }
+    }
+    
+    private suspend fun doWork1() : String{
+            delay(2000L)
+            return "Do Work 1"
+        }
+
+        private suspend fun doWork2(): String{
+            delay(2000L)
+            return "Do Work 2"
+        }
+}
+    
+    
+    
 
 
 
