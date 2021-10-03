@@ -14,6 +14,7 @@ Few Notes about Coroutine
       3. Dispatchers.Default = When coroutines are launched in GlobalScope is represented by Dispatchers. Default and uses a shared background pool of threads
       4. Dispatchers.Unconfined = when Dispatchers dont know thread then it continue with thread with in used
             // lets the coroutine resume in whatever thread that is used by the corresponding suspending function
+    - runBlocking{} ===> This Block run on main thread. It block main thread till execution completion in runBlock 
 
 _________________________________________________________________________________________________________________________________
 // following both global scope work parallely unfix sequence
@@ -88,8 +89,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+_____________________________________________________________________________________________________________________________________________________
 
 
 
 
 
+
+ 
