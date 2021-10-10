@@ -15,6 +15,7 @@ in Android Studio add following lib
 - CoroutineScope : This used to create new coroutines such as launch() and async() extend CoroutineScope.
 - Dispatcher : Determines the thread on which coroutine will use. 
 - Dispatcher.Main =  It always runs coroutines on the main thread.
+- GlobalScope : The GlobalScope allows any coroutines in it to run as long as the app is running.
 
 ____________________________________________________________________________________________________________________________________________________________________
 
