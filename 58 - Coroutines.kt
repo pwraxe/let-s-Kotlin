@@ -11,6 +11,11 @@ in Android Studio add following lib
 - A CoroutineScope is a context that enforces cancellation and other rules to its children.
 - A Dispatcher manages backing thread, coroutine will use for its execution, removing the responsibility to use a new thread from the developer.
 
+- Job : A cancelable unit of work, such as one created with the launch() function.
+- CoroutineScope : This used to create new coroutines such as launch() and async() extend CoroutineScope.
+- Dispatcher : Determines the thread on which coroutine will use. 
+- Dispatcher.Main =  It always runs coroutines on the main thread.
+
 ____________________________________________________________________________________________________________________________________________________________________
 
 Few Notes about Coroutine
