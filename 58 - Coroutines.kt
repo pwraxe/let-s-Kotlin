@@ -7,6 +7,10 @@ in Android Studio add following lib
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
 
+
+- A CoroutineScope is a context that enforces cancellation and other rules to its children.
+- A Dispatcher manages backing thread, coroutine will use for its execution, removing the responsibility to use a new thread from the developer.
+
 ____________________________________________________________________________________________________________________________________________________________________
 
 Few Notes about Coroutine
