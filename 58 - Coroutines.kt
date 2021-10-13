@@ -38,6 +38,8 @@ Few Notes about Coroutine
     - runBlocking{}  Vs coroutineScope{}  
         - runBlocking{} =  The main difference is that the runBlocking method blocks the current thread for waiting.
         - coroutineScope{} = It is suspend fun, releasing the underlying thread for other usages.
+        - We can write multiple launch{} block in coroutineScope{}
+        - launch{} block return reference of job type
 
 _________________________________________________________________________________________________________________________________
 // following both global scope work parallely unfix sequence
