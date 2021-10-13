@@ -45,6 +45,17 @@ Few Notes about Coroutine
         - async :  Use async when you need the results from the multiple tasks that run in parallel.
         - launch : Launch can be used at places if you don`t need the result from the method called
     - if we cancel work/job then we need to check whether coroutine active or not by using `isActive`  in launch{} or await{} etc block
+    - If I want to execute certain code in specific/given time then we will use `withTimeout(timeInMiliSec){}` if code remain to execute then get `TimeoutCancellationException`
+
+
+
+
+
+
+
+
+
+
 _________________________________________________________________________________________________________________________________
 // following both global scope work parallely unfix sequence
 
