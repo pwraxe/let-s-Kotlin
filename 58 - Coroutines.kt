@@ -35,6 +35,10 @@ Few Notes about Coroutine
     - To cancel job first check whether .cancel() block executes or not by if(isActive) 
     - lifecycleScope --> coroutine executes till activity or fragment lifecycle alive
 
+    - runBlocking{}  Vs coroutineScope{}  
+        - runBlocking{} =  The main difference is that the runBlocking method blocks the current thread for waiting.
+        - coroutineScope{} = It is suspend fun, releasing the underlying thread for other usages.
+
 _________________________________________________________________________________________________________________________________
 // following both global scope work parallely unfix sequence
 
