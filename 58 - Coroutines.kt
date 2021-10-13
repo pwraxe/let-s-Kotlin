@@ -48,7 +48,8 @@ Few Notes about Coroutine
     - If I want to execute certain code in specific/given time then we will use `withTimeout(timeInMiliSec){}` if code remain to execute then get `TimeoutCancellationException`
     - withTimeoutOrNull(timeInMilliSec){ return null if time exausted}
     - If you want to know , how much time took for execution then,    val time = measureTimeMillis{ /* todo work */ } ; print(time) //prints in milisecond    
-
+    - Flow : - It is a type that can emit multiple values sequentially, as opposed to suspend functions that return only a single value.
+             - For example, you can use a flow to receive live updates from a database.
 
 
 
