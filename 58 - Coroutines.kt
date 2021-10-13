@@ -51,8 +51,8 @@ Few Notes about Coroutine
     - Flow : - It is a type that can emit multiple values sequentially, as opposed to suspend functions that return only a single value.
              - For example, you can use a flow to receive live updates from a database.
 
-
-
+    - Channel - A Channel is conceptually very similar to BlockingQueue. It has send() and  receive() functions
+    - Pipelines - A pipeline is a pattern where one coroutine is producing, possibly infinite, stream of values, It has iterator(), yield(), next() functions
 
 
 
