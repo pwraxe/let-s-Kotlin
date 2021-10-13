@@ -38,6 +38,7 @@ Few Notes about Coroutine
     - runBlocking{}  Vs coroutineScope{}  
         - runBlocking{} =  The main difference is that the runBlocking method blocks the current thread for waiting.
         - coroutineScope{} = It is suspend fun, releasing the underlying thread for other usages.
+        - supervisorScope{} : It is same as CoroutineScope but diff is, this scope cancel its all children if it fails,  It also waits for all children before completion
         - We can write multiple launch{} block in coroutineScope{}
         - launch{} block return reference of job type
     
@@ -53,6 +54,7 @@ Few Notes about Coroutine
 
     - Channel - A Channel is conceptually very similar to BlockingQueue. It has send() and  receive() functions
     - Pipelines - A pipeline is a pattern where one coroutine is producing, possibly infinite, stream of values, It has iterator(), yield(), next() functions
+    
 
 
 
