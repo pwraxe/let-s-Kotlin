@@ -40,7 +40,10 @@ Few Notes about Coroutine
         - coroutineScope{} = It is suspend fun, releasing the underlying thread for other usages.
         - We can write multiple launch{} block in coroutineScope{}
         - launch{} block return reference of job type
-
+    
+    - async{}  Vs  launch{} : async does return a Deferred<>, while launch does only return a Job,
+        - async :  Use async when you need the results from the multiple tasks that run in parallel.
+        - launch : Launch can be used at places if you don`t need the result from the method called
 _________________________________________________________________________________________________________________________________
 // following both global scope work parallely unfix sequence
 
