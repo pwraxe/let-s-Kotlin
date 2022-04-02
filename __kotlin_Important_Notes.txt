@@ -11,3 +11,5 @@
 - every our created class, method, variable is final by default, we need to 'open' it for override
 - Every class has default constructor next to class name, write explicitly if want to give annotation to class else constructor keyword is optional to write next to class name
 - Only one seal class can inherite to other seal class only 
+- If interface contain only one abstract method then this can be written as lambda function 
+- If any variable declare/initialized as not-null assertion (!!) then left side variable always treated as non-nullable
