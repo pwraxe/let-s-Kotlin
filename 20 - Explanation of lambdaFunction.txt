@@ -1,3 +1,50 @@
+fun main() {
+
+    //Annonymous Function TSRS
+    val sum: (Int, Int) -> Int = {a,b -> a+b}
+    println("The Sum is : ${sum(45,45)}")
+    
+    //Annonymous Function TSRN
+    val square: (Int) -> Unit = {x -> println("Square : ${x*x}") }
+    square(8)
+    
+    //Annonymous Function TNRS
+    val greet: () -> String = {"Greetings From TNRS" }
+    println(greet())
+    
+    //Annonymous Function TNRN
+    val welcome : () -> Unit = { println("Hello there, Welcome to \"Lets Kotlin\" Repository") }
+    welcome()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Main
 {
     fun makeRev(name : String, doRev : (String) -> Unit) = doRev(name)   // 4.
