@@ -13,3 +13,4 @@
 - Only one seal class can inherite to other seal class only 
 - If interface contain only one abstract method then this can be written as lambda function 
 - If any variable declare/initialized as not-null assertion (!!) then left side variable always treated as non-nullable
+- function without return type auto cast to return type if function has single returnable expression 
