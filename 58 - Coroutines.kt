@@ -20,6 +20,9 @@ in Android Studio add following lib
 ____________________________________________________________________________________________________________________________________________________________________
 
 Few Notes about Coroutine
+    - Definations
+        -> Coroutine is instance of suspendable computatations
+
     - delay(0L) ---> this is suspend function so you only have to call from either in launch{ .. } or suspend function 
     - code sequentially run inside suspend fun 
     - Excecution Sequence > Dispatchers.Unconfined > Dispatchers.Default > Dispatchers.IO > Dispatchers.Main
