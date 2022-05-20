@@ -65,6 +65,22 @@ Few Notes about Coroutine
 
 
 
+_________________________________________________________________________________________________________________________________
+
+Kotlin Coroutine Best Practice
+
+1-->   when you use dispacher then dont hardcode it pass Dispacher as param and ser default in param like DI
+2-->   To write withContext in suspend function or return Result.Success(resp) || Result.failure(exception)
+3-->   Viewmodel should create coroutine 
+4-->    Mutable values always private and get change in current file and can access by val outside
+5-->    Repository can contain suspend function and Flows<T>
+6-->    Can create coroutine in business/data layer (in repository by passing dispacher)
+7-->    user 'externalScope' insted of GlobalScope
+8-->    Make your coroutine cancellable by calling function ensureActive()
+9-->    Watch For Exception, in viewmodelscope add try-catch in viewmodelscope.lauch{ try{}catch{} }
+
+
+
 
 
 _________________________________________________________________________________________________________________________________
