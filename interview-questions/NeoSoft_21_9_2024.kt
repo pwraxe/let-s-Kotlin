@@ -18,6 +18,8 @@
 -> SingleTop Vs Single Instance
 -> Data Binding Vs View Binding
 -> Why Java is not complete Object Oriented?
+-> What is Polymorphism
+-> What is method overloading and overriding
 
 
 fun main() {
