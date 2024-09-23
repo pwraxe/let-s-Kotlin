@@ -17,6 +17,7 @@
 -> Activity Launch methods 
 -> SingleTop Vs Single Instance
 -> Data Binding Vs View Binding
+-> Why Java is not complete Object Oriented?
 
 
 fun main() {
